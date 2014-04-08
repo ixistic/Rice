@@ -1,0 +1,39 @@
+package rules
+ 
+import com.sample.DroolsTest.Message;
+ 
+rule "21"
+	when
+		m : Message( message == "ต้องการชลประทาน" );
+
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 2");
+		m.addResult("สุพรรณบุรี 3");
+		m.addResult("สุพรรณบุรี 60");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 1");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("กข 41");
+		m.addResult("ชัยนาท 80");
+		m.addResult("กข 43");
+end
+
+rule "22"
+	when
+		m : Message( message == "ไม่ต้องการชลประทาน" );
+
+	then
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ข้าวตาแห้ง 17");
+		m.addResult("เหลืองพานทอง");
+		m.addResult("รังสิต 80");
+		m.addResult("เหลืองปะทิว 123");
+		m.addResult("หลวงประทาน");
+		m.addResult("นางมล");
+		m.addResult("ขาวเศรษฐี");
+		m.addResult("ห้ารวง");
+		m.addResult("ปิ่นแก้ว");
+		m.addResult("ขาวกอเดียว");
+end

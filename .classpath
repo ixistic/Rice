@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="DROOLS/Drools"/>
+	<classpathentry kind="lib" path="lib/http-20070405.jar"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/antlr-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/drools-compiler.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/drools-core.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/drools-decisiontables.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/drools-jsr94.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/drools-templates.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/jbpm-bpmn2.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/jbpm-flow-builder.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/jbpm-flow.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/jsr94.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/junit.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/kie-api.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/kie-internal.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/mvel2.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/org.eclipse.jdt.core_3.8.3.v20130121-145325.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/poi-ooxml.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/poi.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/protobuf-java.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/slf4j-api.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/xmlpull.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/xpp3_min.jar"/>
+	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/xstream.jar"/>
+	<classpathentry kind="output" path="target"/>
+</classpath>

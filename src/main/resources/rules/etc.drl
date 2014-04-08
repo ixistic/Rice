@@ -1,0 +1,11 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+ 
+rule "ill"
+    when
+        m : Message( message == "frog" );
+    then
+        m.setMessage( "ill" );
+        update( m );
+end
