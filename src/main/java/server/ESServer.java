@@ -6,6 +6,7 @@ public class ESServer {
 
 	public ESServer(int port, ExpertSystem expertSystem) {
 		try {
+			@SuppressWarnings("resource")
 			ServerSocket server = new ServerSocket(port);
 			System.out.println("Server is running at port " + port);
 			while (true) {

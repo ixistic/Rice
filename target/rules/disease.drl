@@ -1,7 +1,7 @@
 //created on: Mar 31, 2014
 package rules
  
-import com.sample.DroolsTest.Message;
+import com.sample.Drools.Message;
 
 rule "23"
 	when

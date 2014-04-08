@@ -1,11 +1,9 @@
 eclipse.preferences.version=1
-encoding//src/main/java/com/sample/DroolsTest.java=UTF-8
+encoding//src/main/java/com/sample/Drools.java=UTF-8
 encoding//src/main/java/server/ESServer.java=UTF-8
 encoding//src/main/java/server/ESServerThread.java=UTF-8
 encoding//src/main/java/server/ExpertSystem.java=UTF-8
 encoding//src/main/java/server/Main.java=UTF-8
-encoding//src/main/java/server/Server.java=UTF-8
-encoding//src/main/java/server/ServerThread.java=UTF-8
 encoding//src/main/resources/rules/disease.drl=UTF-8
 encoding//src/main/resources/rules/envi.drl=UTF-8
 encoding//src/main/resources/rules/province.drl=UTF-8

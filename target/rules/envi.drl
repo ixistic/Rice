@@ -1,6 +1,6 @@
 package rules
  
-import com.sample.DroolsTest.Message;
+import com.sample.Drools.Message;
  
 rule "21"
 	when

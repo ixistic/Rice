@@ -44,20 +44,20 @@ public class ESServerThread extends Thread {
 				sb.append((char) reader.read());
 //				System.out.print((char) reader.read());
 			}
-			String question = sb.toString().split("\r\n\r\nq=")[1];
-			question = URLDecoder.decode(question, "UTF-8");
-			System.out.println(question);
-
-			String answer = expertSystem.getAnswer(question);
 			
-			String response = "";
-			response += "HTTP/1.1 200 OK\r\n";
-			response += "Server: Mapfap Server\r\n";
-			response += "Content-Type: text/html\r\n";
-			response += "Access-Control-Allow-Origin: *\r\n";
-			response += "\r\n";
-			response += answer;
-			response += "\r\n";
+			String[] splited = sb.toString().split("\r\n\r\nq=");
+			String answer = null;
+			if (splited.length > 1) {
+				String question = splited[1];
+				question = URLDecoder.decode(question, "UTF-8");
+				System.out.println(question);
+				answer = expertSystem.getAnswer(question);
+			} else {
+				answer = "ล้มเหลว";
+			}
+			
+			String response = "HTTP/1.1 200 OK\r\nServer: Mapfap Server\r\nContent-Type: text/html\r\nAccess-Control-Allow-Origin: *\r\n\r\n";
+			response += answer + "\r\n";
 
 			byte[] bytes = response.getBytes();
 			out.write(bytes);
