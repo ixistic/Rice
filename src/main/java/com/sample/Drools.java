@@ -75,7 +75,7 @@ private KieSession ksETC;
 	        	set.retainAll(mss.getSet());
     	}
         for(String s : set) {
-        	answer += s + " ";
+        	answer += s + ",";
         }
         System.out.println(answer);
         return answer;
