@@ -4,6 +4,4 @@ encoding//src/main/java/server/ESServer.java=UTF-8
 encoding//src/main/java/server/ESServerThread.java=UTF-8
 encoding//src/main/java/server/ExpertSystem.java=UTF-8
 encoding//src/main/java/server/Main.java=UTF-8
-encoding//src/main/resources/rules/disease.drl=UTF-8
-encoding//src/main/resources/rules/envi.drl=UTF-8
-encoding//src/main/resources/rules/province.drl=UTF-8
+encoding//src/main/resources/rules/rules.drl=UTF-8
