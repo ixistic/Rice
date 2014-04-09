@@ -288,7 +288,7 @@ end
 
 rule "ProvincesInNorthEast"
 	when
-		m : Message (message == "ภาคตะวันออกเฉียงเหนือ");
+		m : Message (message == "ภาคตะวันออกเฉียงเหนือ" || message == "ภาคอีสาน");
 	then
 		m.addResult("กาฬสินธุ์");
 		m.addResult("ขอนแก่น");

@@ -51,7 +51,6 @@ private Message message;
     	ks.insert(mss);
     	ks.fireAllRules();
     	if(mss.getSet().isEmpty()) {
-    		System.out.println(mss.getMessage());
     		set.add(mss.getMessage());
     	}
     	else {
