@@ -44,7 +44,7 @@ private Message message;
     		message = new Message(arr[i]);
     		ksProvince.insert(message);
 	        ksProvince.fireAllRules();
-	        tempSet.addAll(message.getSet());
+	        //tempSet.addAll(message.getSet());
 	        
 	        Iterator<String> iter = message.getSet().iterator();
 	        HashSet<String> set = new HashSet<String>();
@@ -52,7 +52,9 @@ private Message message;
 	        	message = new Message(iter.next());
 	        	ksProvince.insert(message);
 	        	ksProvince.fireAllRules();
-	        	set.addAll(message.getSet());
+	        	if(message.getSet().isEmpty()) 
+	        		tempSet.add(message.getMessage());
+	        	else set.addAll(message.getSet());
 	        }
 	        iter = set.iterator();
 	        HashSet<String> set2 = (HashSet<String>) set.clone();
@@ -60,9 +62,10 @@ private Message message;
 	        	message = new Message(iter.next());
 	        	ksProvince.insert(message);
 	        	ksProvince.fireAllRules();
-	        	set2.addAll(message.getSet());
+	        	if(message.getSet().isEmpty()) 
+	        		tempSet.add(message.getMessage());
+	        	else set2.addAll(message.getSet());
 	        }
-	        tempSet.addAll(set2);
 	        
 	        
 	        message = new Message(arr[i]);
@@ -95,6 +98,13 @@ private Message message;
     	}
         
         return answer.toString();
+    }
+    
+    private HashSet<String> getResult(Message mss) {
+    	HashSet<String> set = new HashSet<String>();
+    	ksProvince.insert(mss);
+    	ksProvince.fireAllRules();
+		return null;
     }
 
     public static class Message {
