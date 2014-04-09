@@ -1,6 +1,7 @@
 package com.sample;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 import org.kie.api.runtime.KieSession;
 
@@ -12,6 +13,7 @@ private KieSession ksProvince;
 private KieSession ksDisease;
 private KieSession ksEnvironment;
 private KieSession ksETC;
+private Message message;
 	
 	public Drools() {
 		RuleEngine engineProvince = new RuleEngine();
@@ -32,53 +34,48 @@ private KieSession ksETC;
 	}
     
     public String getAnswer(String question){
-    	String answer = "";
+    	StringBuilder answer = new StringBuilder();
     	String[] arr = question.split(" ");
     	
-    	HashSet<String> set = new HashSet<String>();
+    	HashSet<String> resultSet = new HashSet<String>();
     	for(int i = 0; i < arr.length ; i++){
-    		Message mss = new Message();
-	        mss.setMessage(arr[i]);
-	        this.ksProvince.insert(mss);
-	        this.ksProvince.fireAllRules();
+    		HashSet<String> tempSet = new HashSet<String>();
+    		
+    		message = new Message(arr[i]);
+    		ksProvince.insert(message);
+	        ksProvince.fireAllRules();
+	        tempSet.addAll(message.getSet());
 	        
-	        if(set.isEmpty()) {
-	        	if(!mss.getSet().isEmpty())
-	        		set = mss.getSet();
-	        }
-	        else {
-	        	if(!mss.getSet().isEmpty())
-	        		set.retainAll(mss.getSet());
-	        }
-	        
-    		mss = new Message();
-	        mss.setMessage(arr[i]);
-	        ksDisease.insert(mss);
+	        message = new Message(arr[i]);
+	        ksDisease.insert(message);
 	        ksDisease.fireAllRules();
+	        tempSet.addAll(message.getSet());
 	        
-	        if(!mss.getSet().isEmpty())
-	        	set.retainAll(mss.getSet());
-	        
-	      
-    		mss = new Message();
-	        mss.setMessage(arr[i]);
-	        ksEnvironment.insert(mss);
+    		message = new Message(arr[i]);
+	        ksEnvironment.insert(message);
 	        ksEnvironment.fireAllRules();
-	        if(!mss.getSet().isEmpty())
-	        	set.retainAll(mss.getSet());
+	        tempSet.addAll(message.getSet());
 	        
-    		mss = new Message();
-	        mss.setMessage(arr[i]);
-	        ksETC.insert(mss);
+	        message = new Message(arr[i]);
+	        ksETC.insert(message);
 	        ksETC.fireAllRules();
-	        if(!mss.getSet().isEmpty())
-	        	set.retainAll(mss.getSet());
+	        tempSet.addAll(message.getSet());
+	        
+	        if (i == 0) {
+	        	resultSet = tempSet;
+	        } else {
+	        	resultSet.retainAll(tempSet);
+	        }
     	}
-        for(String s : set) {
-        	answer += s + ",";
-        }
-        System.out.println(answer);
-        return answer;
+    	Iterator<String> iter = resultSet.iterator();
+    	if (iter.hasNext()) {
+    		answer.append(iter.next());
+    	}
+    	while (iter.hasNext()) {
+    		answer.append("," + iter.next());
+    	}
+        
+        return answer.toString();
     }
 
     public static class Message {
@@ -87,10 +84,16 @@ private KieSession ksETC;
         
         private HashSet<String> set = new HashSet<String>();;
 
-        private int status;
-
+        public Message(String message) {
+        	this.message = message;
+        }
+        
         public String getMessage() {
             return this.message;
+        }
+        
+        public void setMessage(String message) {
+        	this.message = message;
         }
 
         public void addResult(String s) {
@@ -99,18 +102,6 @@ private KieSession ksETC;
         
         public HashSet<String> getSet() {
         	return set;
-        }
-        
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
-        public int getStatus() {
-            return this.status;
-        }
-        
-        public void setStatus(int status) {
-            this.status = status;
         }
 
     }

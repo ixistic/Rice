@@ -14,3 +14,190 @@ rule "1"
 		m.addResult("ชัยนาท 1");
 		m.addResult("ปทุมธานี 1");
 end
+rule "2"
+	when
+		m : Message( message == "กำแพงเพชร" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ชัยนาท 1");
+end
+rule "3"
+	when
+		m : Message( message == "ชัยนาท" );
+	then
+		m.addResult("สุพรรณบุรี 2");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ชัยนาท 80");
+end
+rule "4"
+	when
+		m : Message( message == "นครนายก" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 60");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 1");
+end
+rule "5"
+	when
+		m : Message( message == "นครปฐม" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 3");
+		m.addResult("สุพรรณบุรี 60");
+		m.addResult("ปทุมธานี 1");
+end
+rule "6"
+	when
+		m : Message( message == "นครสวรรค์" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("ข้าวดอกมะลิ 105");
+end
+rule "7"
+	when
+		m : Message( message == "นนทบุรี" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 3");
+		m.addResult("สุพรรณบุรี 60");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 1");
+end
+rule "8"
+	when
+		m : Message( message == "ปทุมธานี" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 1");
+end
+rule "9"
+	when
+		m : Message( message == "พิจิตร" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("ชัยนาท 80");
+		m.addResult("ขาวกอเดียว");
+end
+rule "10"
+	when
+		m : Message( message == "พิษณุโลก" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 80");
+end
+rule "11"
+	when
+		m : Message( message == "เพชรบูรณ์" );
+	then
+		m.addResult("ปทุมธานี 80");
+		m.addResult("ชัยนาท 80");
+end
+rule "12"
+	when
+		m : Message( message == "ลพบุรี" );
+	then
+		m.addResult("ปทุมธานี 80");
+		m.addResult("หลวงประทาน");
+		m.addResult("นางมล");
+		m.addResult("กข 43");
+		m.addResult("ขาวเศรษฐี");
+		m.addResult("ห้ารวง");
+		m.addResult("ปิ่นแก้ว");
+end
+rule "13"
+	when
+		m : Message( message == "สมุทรปราการ" );
+	then
+		m.addResult("ปทุมธานี 80");
+		m.addResult("หลวงประทาน");
+		m.addResult("นางมล");
+		m.addResult("กข 43");
+		m.addResult("ขาวเศรษฐี");
+		m.addResult("ห้ารวง");
+		m.addResult("ปิ่นแก้ว");
+end
+rule "14"
+	when
+		m : Message( message == "สมุทรสงคราม" );
+	then
+		m.addResult("ปทุมธานี 80");
+end
+rule "15"
+	when
+		m : Message( message == "สระบุรี" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("ปทุมธานี 1");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("ข้าวตาแห้ง 17");
+		m.addResult("เหลืองพานทอง");
+		m.addResult("รังสิต 80");
+end
+rule "16"
+	when
+		m : Message( message == "สิงห์บุรี" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("ปทุมธานี 1");
+		m.addResult("ปทุมธานี 80");
+end
+rule "17"
+	when
+		m : Message( message == "สุโขทัย" );
+	then
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("กข 41");
+		m.addResult("ชัยนาท 80");
+end
+rule "18"
+	when
+		m : Message( message == "สุพรรณบุรี" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 2");
+		m.addResult("สุพรรณบุรี 60");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ปทุมธานี 1");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("กข 41");
+end
+rule "19"
+	when
+		m : Message( message == "อยุธยา" );
+	then
+		m.addResult("ปทุมธานี 80");
+		m.addResult("หลวงประทาน");
+		m.addResult("นางมล");
+		m.addResult("กข 43");
+		m.addResult("ขาวเศรษฐี");
+		m.addResult("ห้ารวง");
+		m.addResult("ปิ่นแก้ว");
+end
+rule "20"
+	when
+		m : Message( message == "อ่างทอง" );
+	then
+		m.addResult("สุพรรณบุรี 1");
+		m.addResult("สุพรรณบุรี 2");
+		m.addResult("พิษณุโลก 2");
+		m.addResult("ชัยนาท 1");
+		m.addResult("ปทุมธานี 1");
+		m.addResult("ปทุมธานี 80");
+		m.addResult("เหลืองปะทิว 123");
+end
