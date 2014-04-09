@@ -44,7 +44,25 @@ private Message message;
     		message = new Message(arr[i]);
     		ksProvince.insert(message);
 	        ksProvince.fireAllRules();
-	        tempSet.addAll(message.getSet());
+	        //tempSet.addAll(message.getSet());
+	        
+	        Iterator<String> iter = message.getSet().iterator();
+	        HashSet<String> set = new HashSet<String>();
+	        while(iter.hasNext()) {
+	        	message = new Message(iter.next());
+	        	ksProvince.insert(message);
+	        	ksProvince.fireAllRules();
+	        	set.addAll(message.getSet());
+	        }
+	        iter = set.iterator();
+	        HashSet<String> set2 = (HashSet<String>) set.clone();
+	        while(iter.hasNext()) {
+	        	message = new Message(iter.next());
+	        	ksProvince.insert(message);
+	        	ksProvince.fireAllRules();
+	        	set2.addAll(message.getSet());
+	        }
+	        tempSet.addAll(set2);
 	        
 	        message = new Message(arr[i]);
 	        ksDisease.insert(message);

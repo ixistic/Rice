@@ -201,3 +201,112 @@ rule "20"
 		m.addResult("ปทุมธานี 80");
 		m.addResult("เหลืองปะทิว 123");
 end
+
+rule "ProvincesInCentral"
+	when 
+		m : Message( message == "ภาคกลาง");
+	then
+		m.addResult("กรุงเทพ");
+		m.addResult("กำแพงเพชร");
+		m.addResult("ชัยนาท");
+		m.addResult("นครนายก");
+		m.addResult("นครปฐม");
+		m.addResult("นครสวรรค์");
+		m.addResult("นนทบุรี");
+		m.addResult("ปทุมธานี");
+		m.addResult("พิจิตร");
+		m.addResult("พิษณุโลก");
+		m.addResult("เพชรบูรณ์");
+		m.addResult("ลพบุรี");
+		m.addResult("สมุทรปราการ");
+		m.addResult("สมุทรสงคราม");
+		m.addResult("สระบุรี");
+		m.addResult("สิงห์บุรี");
+		m.addResult("สุโขทัย");
+		m.addResult("สุพรรณบุรี");
+		m.addResult("อยุธยา");
+		m.addResult("อ่างทอง");
+end
+
+rule "RegionsInNorth"
+	when 
+		m : Message( message == "ภาคเหนือ");
+	then
+		m.addResult("ภาคเหนือตอนบน");
+		m.addResult("ภาคเหนือตอนล่าง");
+end
+
+rule "ProvincesInUpperNorth"
+	when 
+		m : Message( message == "ภาคเหนือตอนบน");
+	then
+		m.addResult("เชียงราย");
+		m.addResult("เชียงใหม่");
+		m.addResult("น่าน");
+		m.addResult("พะเยา");
+		m.addResult("เเพร่");
+		m.addResult("เเม่ฮ่องสอน");
+		m.addResult("ลำปาง");
+		m.addResult("ลำพูน");
+		m.addResult("อุตรดิตถ์");
+end
+
+rule "ProvincesInlowerNorth"
+	when 
+		m : Message( message == "ภาคเหนือตอนล่าง");
+	then
+		m.addResult("ตาก");
+		m.addResult("พิษณุโลก");
+		m.addResult("สุโขทัย");
+		m.addResult("เพชรบูรณ์");
+		m.addResult("พิจิตร");
+		m.addResult("กำเเพงเพชร");
+		m.addResult("นครสวรรค์");
+		m.addResult("อุทัยธานี");
+end
+
+rule "ProvincesInSouth"
+	when
+		m : Message ( message == "ภาคใต้");
+	then
+		m.addResult("กระบี่");
+		m.addResult("ชุมพร");
+		m.addResult("ตรัง");
+		m.addResult("นครศรีธรรมราช");
+		m.addResult("นราธิวาส");
+		m.addResult("ปัตตานี");
+		m.addResult("พังงา");
+		m.addResult("พัทลุง");
+		m.addResult("ภูเก็ต");
+		m.addResult("ระนอง");
+		m.addResult("สตูล");
+		m.addResult("สงขลา");
+		m.addResult("สุราษฎร์ธานี");
+		m.addResult("ยะลา");
+end
+
+rule "ProvincesInNorthEast"
+	when
+		m : Message (message == "ภาคตะวันออกเฉียงเหนือ");
+	then
+		m.addResult("กาฬสินธุ์");
+		m.addResult("ขอนแก่น");
+		m.addResult("ชัยภูมิ");
+		m.addResult("นครพนม");
+		m.addResult("นครราชสีมา");
+		m.addResult("บึงกาฬ");
+		m.addResult("บุรีรัมย์");
+		m.addResult("มหาสารคาม");
+		m.addResult("มุกดาหาร");
+		m.addResult("ยโสธร");
+		m.addResult("ร้อยเอ็ด");
+		m.addResult("เลย");
+		m.addResult("สกลนคร");
+		m.addResult("สุรินทร์");
+		m.addResult("ศรีสะเกษ");
+		m.addResult("หนองคาย");
+		m.addResult("หนองบัวลำภู");
+		m.addResult("อุดรธานี");
+		m.addResult("อุบลราชธานี");
+		m.addResult("อำนาจเจริญ");
+end
