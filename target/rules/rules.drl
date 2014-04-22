@@ -7,309 +7,308 @@ rule "1"
 		m : Message( message == "กรุงเทพ" );
 
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
 end
 rule "2"
 	when
 		m : Message( message == "กำแพงเพชร" );
 	then
-		System.out.println("sadasf");
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ชัยนาท 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
 end
 rule "3"
 	when
 		m : Message( message == "ชัยนาท" );
 	then
-		m.addResult("สุพรรณบุรี 2");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ชัยนาท 80");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
 end
 rule "4"
 	when
 		m : Message( message == "นครนายก" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
 end
 rule "5"
 	when
 		m : Message( message == "นครปฐม" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("ปทุมธานี 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
 end
 rule "6"
 	when
 		m : Message( message == "นครสวรรค์" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("ข้าวดอกมะลิ 105");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
 end
 rule "7"
 	when
 		m : Message( message == "นนทบุรี" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
 end
 rule "8"
 	when
 		m : Message( message == "ปทุมธานี" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
 end
 rule "9"
 	when
 		m : Message( message == "พิจิตร" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ชัยนาท 80");
-		m.addResult("ขาวกอเดียว");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
 end
 rule "10"
 	when
 		m : Message( message == "พิษณุโลก" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 80");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
 end
 rule "11"
 	when
 		m : Message( message == "เพชรบูรณ์" );
 	then
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ชัยนาท 80");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
 end
 rule "12"
 	when
 		m : Message( message == "ลพบุรี" );
 	then
-		m.addResult("ปทุมธานี 80");
-		m.addResult("หลวงประทาน");
-		m.addResult("นางมล");
-		m.addResult("กข 43");
-		m.addResult("ขาวเศรษฐี");
-		m.addResult("ห้ารวง");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 rule "13"
 	when
 		m : Message( message == "สมุทรปราการ" );
 	then
-		m.addResult("ปทุมธานี 80");
-		m.addResult("หลวงประทาน");
-		m.addResult("นางมล");
-		m.addResult("กข 43");
-		m.addResult("ขาวเศรษฐี");
-		m.addResult("ห้ารวง");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 rule "14"
 	when
 		m : Message( message == "สมุทรสงคราม" );
 	then
-		m.addResult("ปทุมธานี 80");
+		m.addResult("ปทุมธานี 80","ข้าว");
 end
 rule "15"
 	when
 		m : Message( message == "สระบุรี" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("เหลืองพานทอง");
-		m.addResult("รังสิต 80");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
 end
 rule "16"
 	when
 		m : Message( message == "สิงห์บุรี" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
 end
 rule "17"
 	when
 		m : Message( message == "สุโขทัย" );
 	then
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("กข 41");
-		m.addResult("ชัยนาท 80");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
 end
 rule "18"
 	when
 		m : Message( message == "สุพรรณบุรี" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 2");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("กข 41");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
 end
 rule "19"
 	when
 		m : Message( message == "อยุธยา" );
 	then
-		m.addResult("ปทุมธานี 80");
-		m.addResult("หลวงประทาน");
-		m.addResult("นางมล");
-		m.addResult("กข 43");
-		m.addResult("ขาวเศรษฐี");
-		m.addResult("ห้ารวง");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 rule "20"
 	when
 		m : Message( message == "อ่างทอง" );
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 2");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("เหลืองปะทิว 123");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
 end
 
 rule "ProvincesInCentral"
 	when 
 		m : Message( message == "ภาคกลาง");
 	then
-		m.addResult("กรุงเทพ");
-		m.addResult("กำแพงเพชร");
-		m.addResult("ชัยนาท");
-		m.addResult("นครนายก");
-		m.addResult("นครปฐม");
-		m.addResult("นครสวรรค์");
-		m.addResult("นนทบุรี");
-		m.addResult("ปทุมธานี");
-		m.addResult("พิจิตร");
-		m.addResult("พิษณุโลก");
-		m.addResult("เพชรบูรณ์");
-		m.addResult("ลพบุรี");
-		m.addResult("สมุทรปราการ");
-		m.addResult("สมุทรสงคราม");
-		m.addResult("สระบุรี");
-		m.addResult("สิงห์บุรี");
-		m.addResult("สุโขทัย");
-		m.addResult("สุพรรณบุรี");
-		m.addResult("อยุธยา");
-		m.addResult("อ่างทอง");
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("กำแพงเพชร","จังหวัด");
+		m.addResult("ชัยนาท","จังหวัด");
+		m.addResult("นครนายก","จังหวัด");
+		m.addResult("นครปฐม","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+		m.addResult("ปทุมธานี","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("เพชรบูรณ์","จังหวัด");
+		m.addResult("ลพบุรี","จังหวัด");
+		m.addResult("สมุทรปราการ","จังหวัด");
+		m.addResult("สมุทรสงคราม","จังหวัด");
+		m.addResult("สระบุรี","จังหวัด");
+		m.addResult("สิงห์บุรี","จังหวัด");
+		m.addResult("สุโขทัย","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+		m.addResult("อยุธยา","จังหวัด");
+		m.addResult("อ่างทอง","จังหวัด");
 end
 
 rule "RegionsInNorth"
 	when 
 		m : Message( message == "ภาคเหนือ");
 	then
-		m.addResult("ภาคเหนือตอนบน");
-		m.addResult("ภาคเหนือตอนล่าง");
+		m.addResult("ภาคเหนือตอนบน","ภาค");
+		m.addResult("ภาคเหนือตอนล่าง","ภาค");
 end
 
 rule "ProvincesInUpperNorth"
 	when 
 		m : Message( message == "ภาคเหนือตอนบน");
 	then
-		m.addResult("เชียงราย");
-		m.addResult("เชียงใหม่");
-		m.addResult("น่าน");
-		m.addResult("พะเยา");
-		m.addResult("แพร่");
-		m.addResult("แม่ฮ่องสอน");
-		m.addResult("ลำปาง");
-		m.addResult("ลำพูน");
-		m.addResult("อุตรดิตถ์");
+		m.addResult("เชียงราย","จังหวัด");
+		m.addResult("เชียงใหม่","จังหวัด");
+		m.addResult("น่าน","จังหวัด");
+		m.addResult("พะเยา","จังหวัด");
+		m.addResult("แพร่","จังหวัด");
+		m.addResult("แม่ฮ่องสอน","จังหวัด");
+		m.addResult("ลำปาง","จังหวัด");
+		m.addResult("ลำพูน","จังหวัด");
+		m.addResult("อุตรดิตถ์","จังหวัด");
 end
 
 rule "ProvincesInlowerNorth"
 	when 
 		m : Message( message == "ภาคเหนือตอนล่าง");
 	then
-		m.addResult("ตาก");
-		m.addResult("พิษณุโลก");
-		m.addResult("สุโขทัย");
-		m.addResult("เพชรบูรณ์");
-		m.addResult("พิจิตร");
-		m.addResult("กำแพงเพชร");
-		m.addResult("นครสวรรค์");
-		m.addResult("อุทัยธานี");
+		m.addResult("ตาก","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("สุโขทัย","จังหวัด");
+		m.addResult("เพชรบูรณ์","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("กำแพงเพชร","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("อุทัยธานี","จังหวัด");
 end
 
 rule "ProvincesInSouth"
 	when
 		m : Message ( message == "ภาคใต้");
 	then
-		m.addResult("กระบี่");
-		m.addResult("ชุมพร");
-		m.addResult("ตรัง");
-		m.addResult("นครศรีธรรมราช");
-		m.addResult("นราธิวาส");
-		m.addResult("ปัตตานี");
-		m.addResult("พังงา");
-		m.addResult("พัทลุง");
-		m.addResult("ภูเก็ต");
-		m.addResult("ระนอง");
-		m.addResult("สตูล");
-		m.addResult("สงขลา");
-		m.addResult("สุราษฎร์ธานี");
-		m.addResult("ยะลา");
+		m.addResult("กระบี่","จังหวัด");
+		m.addResult("ชุมพร","จังหวัด");
+		m.addResult("ตรัง","จังหวัด");
+		m.addResult("นครศรีธรรมราช","จังหวัด");
+		m.addResult("นราธิวาส","จังหวัด");
+		m.addResult("ปัตตานี","จังหวัด");
+		m.addResult("พังงา","จังหวัด");
+		m.addResult("พัทลุง","จังหวัด");
+		m.addResult("ภูเก็ต","จังหวัด");
+		m.addResult("ระนอง","จังหวัด");
+		m.addResult("สตูล","จังหวัด");
+		m.addResult("สงขลา","จังหวัด");
+		m.addResult("สุราษฎร์ธานี","จังหวัด");
+		m.addResult("ยะลา","จังหวัด");
 end
 
 rule "ProvincesInNorthEast"
 	when
 		m : Message (message == "ภาคตะวันออกเฉียงเหนือ" || message == "ภาคอีสาน");
 	then
-		m.addResult("กาฬสินธุ์");
-		m.addResult("ขอนแก่น");
-		m.addResult("ชัยภูมิ");
-		m.addResult("นครพนม");
-		m.addResult("นครราชสีมา");
-		m.addResult("บึงกาฬ");
-		m.addResult("บุรีรัมย์");
-		m.addResult("มหาสารคาม");
-		m.addResult("มุกดาหาร");
-		m.addResult("ยโสธร");
-		m.addResult("ร้อยเอ็ด");
-		m.addResult("เลย");
-		m.addResult("สกลนคร");
-		m.addResult("สุรินทร์");
-		m.addResult("ศรีสะเกษ");
-		m.addResult("หนองคาย");
-		m.addResult("หนองบัวลำภู");
-		m.addResult("อุดรธานี");
-		m.addResult("อุบลราชธานี");
-		m.addResult("อำนาจเจริญ");
+		m.addResult("กาฬสินธุ์","จังหวัด");
+		m.addResult("ขอนแก่น","จังหวัด");
+		m.addResult("ชัยภูมิ","จังหวัด");
+		m.addResult("นครพนม","จังหวัด");
+		m.addResult("นครราชสีมา","จังหวัด");
+		m.addResult("บึงกาฬ","จังหวัด");
+		m.addResult("บุรีรัมย์","จังหวัด");
+		m.addResult("มหาสารคาม","จังหวัด");
+		m.addResult("มุกดาหาร","จังหวัด");
+		m.addResult("ยโสธร","จังหวัด");
+		m.addResult("ร้อยเอ็ด","จังหวัด");
+		m.addResult("เลย","จังหวัด");
+		m.addResult("สกลนคร","จังหวัด");
+		m.addResult("สุรินทร์","จังหวัด");
+		m.addResult("ศรีสะเกษ","จังหวัด");
+		m.addResult("หนองคาย","จังหวัด");
+		m.addResult("หนองบัวลำภู","จังหวัด");
+		m.addResult("อุดรธานี","จังหวัด");
+		m.addResult("อุบลราชธานี","จังหวัด");
+		m.addResult("อำนาจเจริญ","จังหวัด");
 end
 
 rule "23"
@@ -317,8 +316,8 @@ rule "23"
 		m : Message( message == "ใบขีดสีน้ำตาล" );
 
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 2");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
 end
 
 rule "24"
@@ -326,8 +325,8 @@ rule "24"
 		m : Message( message == "โรคกาบใบเน่า" );
 
 	then
-		m.addResult("สุพรรณบุรี 2");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 
 rule "25"
@@ -335,8 +334,8 @@ rule "25"
 		m : Message( message == "ใบจุดสีน้ำตาล" );
 
 	then
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("สุพรรณบุรี 60");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
 end
 
 rule "26"
@@ -344,15 +343,15 @@ rule "26"
 		m : Message( message == "ใบสีส้ม" );
 
 	then
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("เหลืองปะทิว 123");
-		m.addResult("นางมล");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 
 rule "27"
@@ -360,7 +359,7 @@ rule "27"
 		m : Message( message == "กาบใบแห้ง" );
 
 	then
-		m.addResult("สุพรรณบุรี 60");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
 end
 
 rule "28"
@@ -368,12 +367,12 @@ rule "28"
 		m : Message( message == "ใบหงิก" );
 
 	then
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 
 rule "29"
@@ -381,15 +380,15 @@ rule "29"
 		m : Message( message == "โรคไหม้" );
 
 	then
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("เหลืองปะทิว 123");
-		m.addResult("นางมล");
-		m.addResult("กข 43");
-		m.addResult("ปิ่นแก้ว");
-		m.addResult("ขาวกอเดียว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
 end
 
 rule "32"
@@ -397,13 +396,13 @@ rule "32"
 		m : Message( message == "ขอบใบแห้ง" );
 
 	then
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("กข 41");
-		m.addResult("นางมล");
-		m.addResult("ปิ่นแก้ว");
-		m.addResult("ขาวกอเดียว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
 end
 
 rule "34"
@@ -411,11 +410,11 @@ rule "34"
 		m : Message( message == "เพลี้ยจักจั่นเขียว " );
 
 	then
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("เหลืองพานทอง");
-		m.addResult("เหลืองปะทิว 123");
-		m.addResult("ปิ่นแก้ว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
 end
 
 rule "36"
@@ -423,7 +422,7 @@ rule "36"
 		m : Message( message == "ใบขีดโปร่งแสง" );
 
 	then
-		m.addResult("ชัยนาท 1");
+		m.addResult("ชัยนาท 1","ข้าว");
 end
 
 rule "21"
@@ -431,17 +430,17 @@ rule "21"
 		m : Message( message == "ต้องการชลประทาน" );
 
 	then
-		m.addResult("สุพรรณบุรี 1");
-		m.addResult("สุพรรณบุรี 2");
-		m.addResult("สุพรรณบุรี 3");
-		m.addResult("สุพรรณบุรี 60");
-		m.addResult("พิษณุโลก 2");
-		m.addResult("ชัยนาท 1");
-		m.addResult("ปทุมธานี 1");
-		m.addResult("ปทุมธานี 80");
-		m.addResult("กข 41");
-		m.addResult("ชัยนาท 80");
-		m.addResult("กข 43");
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("กข 43","ข้าว");
 end
 
 rule "22"
@@ -449,17 +448,17 @@ rule "22"
 		m : Message( message == "ไม่ต้องการชลประทาน" );
 
 	then
-		m.addResult("ข้าวดอกมะลิ 105");
-		m.addResult("ข้าวตาแห้ง 17");
-		m.addResult("เหลืองพานทอง");
-		m.addResult("รังสิต 80");
-		m.addResult("เหลืองปะทิว 123");
-		m.addResult("หลวงประทาน");
-		m.addResult("นางมล");
-		m.addResult("ขาวเศรษฐี");
-		m.addResult("ห้ารวง");
-		m.addResult("ปิ่นแก้ว");
-		m.addResult("ขาวกอเดียว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
 end
 
 rule "b1"

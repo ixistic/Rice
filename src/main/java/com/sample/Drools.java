@@ -21,42 +21,47 @@ private Message message;
     public String getAnswer(String question){
     	StringBuilder answer = new StringBuilder();
     	String[] arr = question.split(" ");
-    	
-    	HashSet<String> resultSet = new HashSet<String>();
-    	for(int i = 0; i < arr.length ; i++){
-    		HashSet<String> tempSet = new HashSet<String>();
+    	String type = arr[0];
+    	HashSet<Message> resultSet = new HashSet<Message>();
+    	for(int i = 1; i < arr.length ; i++){
+    		HashSet<Message> tempSet = new HashSet<Message>();
     		
-    		message = new Message(arr[i]);
+    		message = new Message(arr[i],"input");
 	        tempSet.addAll(getResult(message,kieSession));
 	        
-	        if (i == 0) {
+	        if (i == 1) {
 	        	resultSet = tempSet;
 	        } else {
 	        	resultSet.retainAll(tempSet);
 	        }
     	}
-    	Iterator<String> iter = resultSet.iterator();
-    	if (iter.hasNext()) {
-    		answer.append(iter.next());
-    	}
+    	Iterator<Message> iter = resultSet.iterator();
     	while (iter.hasNext()) {
-    		answer.append("," + iter.next());
+    		Message t = iter.next();
+    		if(answer.length() < 1) {
+    			if(t.getType().equals(type))
+    				answer.append(iter.next());
+    		}
+    		else {
+    			if(t.getType().equals(type))
+    				answer.append("," + iter.next());
+    		}
     	}
         
         return answer.toString();
     }
     
-    private HashSet<String> getResult(Message mss,KieSession ks) {
-    	HashSet<String> set = new HashSet<String>();
+    private HashSet<Message> getResult(Message mss,KieSession ks) {
+    	HashSet<Message> set = new HashSet<Message>();
     	ks.insert(mss);
     	ks.fireAllRules();
     	if(mss.getSet().isEmpty()) {
-    		set.add(mss.getMessage());
+    		set.add(mss);
     	}
     	else {
-    		Iterator<String> iter = mss.getSet().iterator();
+    		Iterator<Message> iter = mss.getSet().iterator();
     		while(iter.hasNext()) {
-    			set.addAll(getResult(new Message(iter.next()),ks));
+    			set.addAll(getResult(iter.next(),ks));
     		}
     	}
 		return set;
@@ -66,10 +71,13 @@ private Message message;
 
         private String message;
         
-        private HashSet<String> set = new HashSet<String>();;
+        private String type;
+        
+        private HashSet<Message> set = new HashSet<Message>();;
 
-        public Message(String message) {
+        public Message(String message,String type) {
         	this.message = message;
+        	this.type = type;
         }
         
         public String getMessage() {
@@ -80,12 +88,16 @@ private Message message;
         	this.message = message;
         }
 
-        public void addResult(String s) {
-        	set.add(s);
+        public void addResult(String name,String type) {
+        	set.add(new Message(name,type));
         }
         
-        public HashSet<String> getSet() {
+        public HashSet<Message> getSet() {
         	return set;
+        }
+        
+        public String getType() {
+        	return this.type;
         }
 
     }
