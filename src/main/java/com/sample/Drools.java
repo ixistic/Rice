@@ -36,18 +36,18 @@ private Message message;
 	        }
     	}
     	Iterator<Message> iter = resultSet.iterator();
-    	while (iter.hasNext()) {
+    	HashSet<String> set = new HashSet<String>();
+    	while(iter.hasNext()) {
     		Message t = iter.next();
-    		if(answer.length() < 1) {
-    			if(t.getType().equals(type))
-    				answer.append(iter.next());
-    		}
-    		else {
-    			if(t.getType().equals(type))
-    				answer.append("," + iter.next());
+    		if(t.getType().equals(type)) {
+    			set.add(t.getMessage());
     		}
     	}
-        
+    	Iterator<String> tIter = set.iterator();
+    	if(tIter.hasNext()) answer.append(tIter.next());
+    	while (tIter.hasNext()) {
+    		answer.append("," + tIter.next());
+    	}
         return answer.toString();
     }
     
