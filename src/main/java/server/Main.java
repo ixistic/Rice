@@ -12,7 +12,7 @@ public class Main {
 				if (answer.isEmpty()) {
 					return "ไม่มีข้อมูลที่ค้นหา";
 				}
-//				System.out.println(answer);
+				System.out.println(answer);
 				return answer;
 			}
 		});

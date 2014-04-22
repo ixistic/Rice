@@ -461,3 +461,24 @@ rule "22"
 		m.addResult("ปิ่นแก้ว");
 		m.addResult("ขาวกอเดียว");
 end
+
+rule "b1"
+	when
+		m : Message( message == "เป็นเบาหวาน" );
+	then
+		m.addResult("ข้าวน้ำตาลน้อย");
+end
+
+rule "b2"
+	when
+		m : Message( message == "ข้าวน้ำตาลน้อย" );
+	then
+		m.addResult("ข้าวหอมมะลิ");
+end
+
+rule "b3"
+	when
+		m : Message( message == "อุบลราชธานี" );
+	then
+		m.addResult("ข้าวหอมมะลิแดง");
+end
