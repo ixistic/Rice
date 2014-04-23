@@ -481,3 +481,135 @@ rule "b3"
 	then
 		m.addResult("ข้าวหอมมะลิแดง","");
 end
+
+rule "n1"
+	when 
+		m : Message( message == "เชื้อรา");
+	then
+		m.addResult("โรคเมล็ดด่าง","โรค");
+		m.addResult("โรคขอบใบแห้ง","โรค");
+		m.addResult("โรคกาบใบแห้ง","โรค");
+		m.addResult("โรคใบจุดสีน้ำตาล","โรค");
+		m.addResult("โรคถอดฝักดาบ","โรค");
+		m.addResult("โรคใบขีดสีน้ำตาล","โรค");
+		m.addResult("โรคกล้าเน่าในกระบะเพาะ","โรค");
+		m.addResult("โรคลำต้นเน่า","โรค");
+end
+
+rule "n2"
+	when 
+		m : Message( message == "นาน้ำฝน");
+	then
+		m.addResult("โรคถอดฝักดาบ","โรค");
+		m.addResult("โรคลำต้นเน่า","โรค");
+		m.addResult("โรคไหม้","โรค");
+		m.addResult("โรคใบจุดสีน้ำตาล","โรค");
+		m.addResult("โรคใบขีดสีน้ำตาล","โรค");
+		m.addResult("โรครากปม","โรค");
+		m.addResult("โรคขอบใบแห้ง","โรค");
+end
+
+rule "n3"
+	when 
+		m : Message( message == "นาชลประทาน");
+	then
+		m.addResult("โรคขอบใบแห้ง","โรค");
+		m.addResult("โรคกาบใบแห้ง","โรค");
+		m.addResult("โรคลำต้นเน่า","โรค");
+		m.addResult("โรคเมล็ดด่าง","โรค");
+		m.addResult("โรคใบจุดสีน้ำตาล","โรค");
+		m.addResult("โรคใบขีดสีน้ำตาล","โรค");
+		m.addResult("โรคใบวงสีน้ำตาล","โรค");
+		m.addResult("โรคกล้าเน่าในกระบะเพาะ","โรค");
+end
+
+rule "n4"
+	when 
+		m : Message( message == "ความชื้นสูง");
+	then
+		m.addResult("โรคขอบใบแห้ง-","โรค");
+end
+
+rule "n5"
+	when 
+		m : Message( message == "เพลี้ยจักจั่นปีกลายหยัก");
+	then
+		m.addResult("โรคใบสีแสด ","โรค");
+		m.addResult("โรคหูด","โรค");
+end
+
+rule "n6"
+	when 
+		m : Message( message == "พืชอาศัย");
+	then
+		m.addResult("โรคใบวงสีน้ำตาล","โรค");
+		m.addResult("โรคถอดฝักดาบ","โรค");
+		m.addResult("โรครากปม","โรค");
+		m.addResult("โรคใบสีแสด","โรค");
+end
+
+rule "n7"
+	when 
+		m : Message( message == "ลมพัด");
+	then
+		m.addResult("โรคขอบใบเเห้ง","โรค");
+		m.addResult("โรคไหม้","โรค");
+		m.addResult("โรคใบขีดสีน้ำตาล","");
+		m.addResult("โรคเมล็ดด่าง","โรค");
+		m.addResult("โรคใบจุดสีน้ำตาล","โรค");
+end
+
+rule "n8"
+	when 
+		m : Message( message == "ปลูกต้นข้าวหนาแน่น");
+	then
+		m.addResult("โรคไหม้","โรค");
+end
+
+rule "m1"
+	when
+		m : Message( message == "รักษามะเร็งเต้านม" );
+	then
+		m.addResult("ถั่วเหลือง","ผัก");
+		m.addResult("กะหล่ำปลี","ผัก");
+		m.addResult("หัวผักกาด","ผัก");
+		m.addResult("หญ้าปักกิ้ง","ผัก");
+end
+
+rule "m2"
+	when
+		m : Message( message == "รักษามะเร็งเต้าลูกหมาก" );
+	then
+		m.addResult("ถั่วเหลือง","ผัก");
+		m.addResult("มะเขือเทศ","ผัก");
+end
+
+rule "m3"
+	when
+		m : Message( message == "รักษามะเร็งสมอง" );
+	then
+		m.addResult("มะระขี้นก","ผัก");
+end
+
+rule "m4"
+	when
+		m : Message( message == "รักษามะเร็งรังไข่" );
+	then
+		m.addResult("ขิง","ผัก");
+		m.addResult("ข่า","ผัก");
+end
+
+rule "m5"
+	when
+		m : Message( message == "รักษามะเร็งลำไส้ใหญ่" );
+	then
+		m.addResult("หญ้าปักกิ้ง","ผัก");
+		m.addResult("ตะไคร้","ผัก");
+end
+
+rule "m6"
+	when
+		m : Message( message == "รักษามะเร็งตับ " );
+	then
+		m.addResult("โสมเกาหลี","ผัก");
+end
