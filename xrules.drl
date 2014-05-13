@@ -1,0 +1,15 @@
+import com.sample.Drools.Message;
+rule "1"
+	when
+		m:Message(message=="กรุงเทพ");
+	then
+		m.addResult("กข5","ข้าว");
+		m.addResult("กข6","ข้าว");
+		m.addResult("กข 8","ข้าว");
+end
+rule "2"
+	when
+		m:Message(message=="งง");
+	then
+		m.addResult("งง","งง");
+end

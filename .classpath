@@ -29,5 +29,6 @@
 	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/xpp3_min.jar"/>
 	<classpathentry kind="lib" path="lib/drools-distribution-6.0.1.Final/xstream.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.28-bin.jar"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>
