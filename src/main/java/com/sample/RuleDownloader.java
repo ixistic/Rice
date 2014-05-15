@@ -70,8 +70,20 @@ public class RuleDownloader {
 	private void writeToFile(String _if, String _then, String _tag) {
 		ruleCounter += 1;
 		try {
-			out.write("rule \"" + ruleCounter
-					+ "\"\n\twhen\n\t\tm:Message(message==\"" + _if + "\");\n\tthen\n");
+			out.write("rule \"" + ruleCounter + "\"\n\twhen\n\t\tm:Message(");
+					
+			String[] conditions = _if.split(",");
+			int countCondition = 0;
+			for (String f : conditions) {
+				countCondition++;
+				out.write("message==\"" + f.trim() + "\"");
+				if (countCondition != conditions.length) {
+					out.write(" || ");
+				}
+			}
+
+			out.write(");\n\tthen\n");
+			
 			for (String t : _then.split(",")) {
 				out.write("\t\tm.addResult(\"" + t.trim() + "\",\"" + _tag
 						+ "\");\n");

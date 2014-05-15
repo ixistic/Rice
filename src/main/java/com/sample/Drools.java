@@ -5,23 +5,39 @@ import java.util.Iterator;
 
 import org.kie.api.runtime.KieSession;
 
+import server.ExpertSystem;
+
 import engine.RuleEngine;
 
-public class Drools {
+public class Drools implements ExpertSystem {
 
 	private KieSession kieSession;
 	private Message message;
+	private String filename;
 
 	public Drools() {
-		RuleEngine engineProvince = new RuleEngine();
-		engineProvince.addRuleFile("rules", "rules.drl");
-		kieSession = engineProvince.buildKnowledgeSession();
+		filename = "xrules.drl";
+		RuleEngine engine = new RuleEngine(filename);
+		kieSession = engine.getKieSession();
 	}
 
 	public void reInitiate() {
-		RuleEngine engineProvince = new RuleEngine();
-		engineProvince.addRuleFile("rules", "rules.drl");
-		kieSession = engineProvince.buildKnowledgeSession();
+		String username = "root";
+		String password = "";
+		String databaseName = "kekm";
+		String host = "localhost";
+		String port = "3306";
+		
+		String connectionString = "jdbc:mysql://" + host + ":" + port + "/"
+				+ databaseName + "?useUnicode=true&characterEncoding=UTF-8";
+		DatabaseConnector db = new DatabaseConnector(connectionString,
+				username, password);
+		RuleDownloader rd = new RuleDownloader(db, filename);
+		rd.download();
+		
+		RuleEngine engine = new RuleEngine(filename);
+		kieSession = engine.getKieSession();
+		System.out.println("RELOAD");
 	}
 
 	public String getAnswer(String question) {
@@ -31,14 +47,16 @@ public class Drools {
 		HashSet<Message> resultSet = new HashSet<Message>();
 		for (int i = 1; i < arr.length; i++) {
 			HashSet<Message> tempSet = new HashSet<Message>();
-
+//			System.out.println(i);
 			message = new Message(arr[i], "input");
 			tempSet.addAll(getResult(message, kieSession));
 
 			if (i == 1) {
 				resultSet = tempSet;
+//				System.out.println("first");
 			} else {
 				resultSet.retainAll(tempSet);
+//				System.out.println(">1");
 			}
 		}
 		Iterator<Message> iter = resultSet.iterator();

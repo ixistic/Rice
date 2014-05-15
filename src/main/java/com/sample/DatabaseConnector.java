@@ -16,7 +16,6 @@ public class DatabaseConnector {
 	
 	private Connection conn = null;
 	private Statement statement = null;
-	private PreparedStatement preaStatement = null;
 	
 	public DatabaseConnector(String url, String username, String password) {
 		this.username = username;

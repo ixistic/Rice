@@ -49,9 +49,13 @@ public class ESServerThread extends Thread {
 			String answer = null;
 			if (splited.length > 1) {
 				String question = splited[1];
+				if (question.equals(".reset")){
+					expertSystem.reInitiate();
+				}
 				question = URLDecoder.decode(question, "UTF-8");
 				System.out.println(question);
 				answer = expertSystem.getAnswer(question);
+//				System.out.println(answer + "  ice");
 			} else {
 				answer = "ล้มเหลว";
 			}

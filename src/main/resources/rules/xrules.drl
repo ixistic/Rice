@@ -27,9 +27,3 @@ rule "4"
 		m.addResult("ยะลา","จังหวัด");
 		m.addResult("บลาๆ","จังหวัด");
 end
-rule "5"
-	when
-		m:Message(message=="ตรัง" || message=="ต");
-	then
-		m.addResult("กรกฎ","ข้าว");
-end

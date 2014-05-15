@@ -15,6 +15,11 @@ public class Main {
 				System.out.println(answer);
 				return answer;
 			}
+
+			@Override
+			public void reInitiate() {
+				drools.reInitiate();				
+			}
 		});
 	}
 }
