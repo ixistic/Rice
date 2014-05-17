@@ -1,35 +1,1750 @@
 import com.sample.Drools.Message;
 rule "1"
 	when
-		m:Message(message=="กรุงเทพ" || message=="กทม" || message=="กรุงเทพมหานคร");
+		m:Message(message=="เชื้อรา" || message=="ที่เกิดจากเชื้อรา");
 	then
-		m.addResult("กข6","ข้าว");
-		m.addResult("กข4","ข้าว");
+		m.addResult("เมล็ดด่าง","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ถอดฝักดาบ","โรค");
+		m.addResult("ใบขีดสีน้ำตาล","โรค");
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
+		m.addResult("ลำต้นเน่า","โรค");
 end
 rule "2"
 	when
-		m:Message(message=="ใบมีสีดำ");
+		m:Message(message=="ที่ปลูกในนาน้ำฝน" || message=="ปลูกในนาน้ำฝน" || message=="นาน้ำฝน");
 	then
-		m.addResult("ใบไหม้","โรค");
+		m.addResult("ถอดฝักดาบ","โรค");
+		m.addResult("ลำต้นเน่า","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ใบขีดสีน้ำตาล","โรค");
+		m.addResult("รากปม","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
 end
 rule "3"
 	when
-		m:Message(message=="ภาคกลาง");
+		m:Message(message=="ที่ปลูกในนาชลประทาน" || message=="ปลูกในนาชลประทาน" || message=="นาชลประทาน");
 	then
-		m.addResult("กรุงเทพ","จังหวัด");
-		m.addResult("นนทบุรี","จังหวัด");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ลำต้นเน่า","โรค");
+		m.addResult("เมล็ดด่าง","โรค");
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ใบขีดสีน้ำตาล","โรค");
+		m.addResult("ใบวงสีน้ำตาล","โรค");
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
 end
 rule "4"
 	when
-		m:Message(message=="ภาคใต้");
+		m:Message(message=="มีความชื้นสูง" || message=="ชื้นมาก" || message=="ปลูกในที่ชื้น");
 	then
-		m.addResult("สงขลา","จังหวัด");
-		m.addResult("ยะลา","จังหวัด");
-		m.addResult("บลาๆ","จังหวัด");
+		m.addResult("ขอบใบแห้ง","โรค");
 end
 rule "5"
 	when
-		m:Message(message=="ตรัง" || message=="ต");
+		m:Message(message=="มีเพลี้ยจักจั่นปีกลายหยัก" || message=="เกิดจากเพลี้ยจักจั่นปีกลายหยัก" || message=="ที่เกิดจากเพลี้ยจักจั่นปีกลายหยัก");
 	then
-		m.addResult("กรกฎ","ข้าว");
+		m.addResult("ใบสีแสด","โรค");
+		m.addResult("หูด","โรค");
+end
+rule "6"
+	when
+		m:Message(message=="มีพืชอาศัย" || message=="เกิดจากพืชอาศัย" || message=="ที่เกิดจากพืชอาศัย");
+	then
+		m.addResult("ใบวงสีน้ำตาล","โรค");
+		m.addResult("ถอดฝักดาบ","โรค");
+		m.addResult("รากปม","โรค");
+		m.addResult("ใบสีแสด","โรค");
+end
+rule "7"
+	when
+		m:Message(message=="มีลมพัด" || message=="เกิดจากลมพัด" || message=="ที่เกิดจากลมพัด");
+	then
+		m.addResult("ขอบใบเเห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบขีดสีน้ำตาล","โรค");
+		m.addResult("เมล็ดด่าง","โรค");
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+end
+rule "8"
+	when
+		m:Message(message=="ปลูกต้นข้าวหนาแน่น" || message=="เกิดจากปลูกต้นข้าวหนาเเน่น" || message=="ที่เกิดจากปลูกข้าวหนาเเน่น");
+	then
+		m.addResult("ไหม้","โรค");
+end
+rule "9"
+	when
+		m:Message(message=="ภาคเหนือ" || message=="ในภาคเหนือ");
+	then
+		m.addResult("เชียงราย","จังหวัด");
+		m.addResult("เชียงใหม่","จังหวัด");
+		m.addResult("น่าน","จังหวัด");
+		m.addResult("พะเยา","จังหวัด");
+		m.addResult("เเพร่","จังหวัด");
+		m.addResult("เเม่ฮ่องสอน","จังหวัด");
+		m.addResult("ลำปาง","จังหวัด");
+		m.addResult("ลำพูน","จังหวัด");
+		m.addResult("อุตรดิตถ์","จังหวัด");
+		m.addResult("ตาก","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("สุโขทัย","จังหวัด");
+		m.addResult("เพชรบูรณ์","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("กำเเพงเพชร","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("อุทัยธานี","จังหวัด");
+end
+rule "10"
+	when
+		m:Message(message=="ภาคเหนือตอนบน");
+	then
+		m.addResult("เชียงราย","จังหวัด");
+		m.addResult("เชียงใหม่","จังหวัด");
+		m.addResult("น่าน","จังหวัด");
+		m.addResult("พะเยา","จังหวัด");
+		m.addResult("เเพร่","จังหวัด");
+		m.addResult("เเม่ฮ่องสอน","จังหวัด");
+		m.addResult("ลำปาง","จังหวัด");
+		m.addResult("ลำพูน","จังหวัด");
+		m.addResult("อุตรดิตถ์","จังหวัด");
+end
+rule "11"
+	when
+		m:Message(message=="ภาคเหนือตอนล่าง");
+	then
+		m.addResult("ตาก","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("สุโขทัย","จังหวัด");
+		m.addResult("เพชรบูรณ์","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("กำเเพงเพชร","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("อุทัยธานี","จังหวัด");
+end
+rule "12"
+	when
+		m:Message(message=="ทนแล้ง or ที่ทนเเล้ง");
+	then
+		m.addResult("ข้าวขาวดอกมะลิ 105 (Khao Dawk Mali 105)","ข้าว");
+		m.addResult("กข6 (RD6)","ข้าว");
+end
+rule "13"
+	when
+		m:Message(message=="ทนดินเปรี้ยว or ที่ทนดินเปรี้ยว");
+	then
+		m.addResult("ข้าวขาวดอกมะลิ","ข้าว");
+end
+rule "14"
+	when
+		m:Message(message=="ทนดินเค็ม" || message=="ที่ทนดินเค็ม");
+	then
+		m.addResult("ข้าวขาวดอกมะลิม","ข้าว");
+		m.addResult("ข้าวเหนียวสันป่าตอง","ข้าว");
+end
+rule "15"
+	when
+		m:Message(message=="ต้านทานใบจุดสีน้ำตาล" || message=="ที่ต้านทานใบจุดสีน้ำตาล" || message=="ที่ต้านใบจุดสีน้ำตาล");
+	then
+		m.addResult("กข 6","ข้าว");
+		m.addResult("เหนียวสันป่าตอง","ข้าว");
+end
+rule "16"
+	when
+		m:Message(message=="ต้านทานโรคไหม้" || message=="ที่ต้านทานโรคไหม้" || message=="ที่ต้านโรคไหม้");
+	then
+		m.addResult("เหนียวสันป่าตอง","โรค");
+		m.addResult("สันป่าตอง","โรค");
+		m.addResult("ชัยนาถ1","โรค");
+		m.addResult("สุพรรณบุรี1","โรค");
+		m.addResult("พิษณุโลก2","โรค");
+		m.addResult("ปราจีนบุรี 1","โรค");
+end
+rule "17"
+	when
+		m:Message(message=="ต้านทานขอบใบเเห้ง" || message=="ที่ต้านทานขอบใบเเห้ง" || message=="ที่ต้านขอบใบเเห้ง");
+	then
+		m.addResult("สันป่าตอง","ข้าว");
+		m.addResult("สุพรรณบุรี1","ข้าว");
+		m.addResult("พิษณุโลก2","ข้าว");
+end
+rule "18"
+	when
+		m:Message(message=="ต้านทานใบส้ม" || message=="ที่ต้านทานใบส้ม" || message=="ที่ต้านใบส้ม");
+	then
+		m.addResult("สุพรรณบุรี1","ข้าว");
+end
+rule "19"
+	when
+		m:Message(message=="ต้านทานใบหงิก" || message=="ที่ต้านทานใบหงิก" || message=="ที่ต้านใบหงิก");
+	then
+		m.addResult("ชัยนาถ1","ข้าว");
+		m.addResult("สุพรรณบุรี1","ข้าว");
+end
+rule "20"
+	when
+		m:Message(message=="ต้านทานเพลี้ยกระโดดสีน้ำตาล" || message=="ที่ต้านทานเพลี้ยกระโดดสีน้ำตาล" || message=="ที่ต้านเพลี้ยกระโดดสีน้ำตาล");
+	then
+		m.addResult("ชัยนาถ1","ข้าว");
+		m.addResult("สุพรรณบุรี1","ข้าว");
+		m.addResult("พิษณุโลก2","ข้าว");
+end
+rule "21"
+	when
+		m:Message(message=="ต้านทานเพลี้ยกระโดดหลังขาว" || message=="ที่ต้านทานเพลี้ยกระโดดหลังขาว" || message=="ที่ต้านเพลี้ยกระโดดหลังขาว");
+	then
+		m.addResult("ชัยนาถ1","ข้าว");
+		m.addResult("สุพรรณบุรี1","ข้าว");
+		m.addResult("พิษณุโลก2","ข้าว");
+end
+rule "22"
+	when
+		m:Message(message=="ต้านทานเพลี้ยจักจั่นสีเขียว" || message=="ที่ต้านทานเพลี้ยจักจั่นสีเขียว" || message=="ที่ต้านเพลี้ยจักจั่นสีเขียว");
+	then
+		m.addResult("ข้าวพิษณุโลก2","ข้าว");
+end
+rule "23"
+	when
+		m:Message(message=="ต้านทานใบขีดโปร่งแสงปานกลาง" || message=="ที่ต้านทานใบขีดโปร่งแสงปานกลาง" || message=="ที่ต้านใบขีดโปร่งแสงปานกลาง");
+	then
+		m.addResult("ข้าวปราจีนบุรี1","ข้าว");
+end
+rule "24"
+	when
+		m:Message(message=="ต้านทานหนอนกอ" || message=="ที่ต้านทานหนอนกอ" || message=="ที่ต้านหนอนกอ");
+	then
+		m.addResult("ปราจีนบุรี1","ข้าว");
+end
+rule "25"
+	when
+		m:Message(message=="วิธีปลูกข้าวดอกมะลิ105" || message=="ช่วงเวลาที่เหมาะสมของข้าวดอกมะลิ105");
+	then
+		m.addResult("ในเขตชลประทานที่ไมมีปํญหาเรื่องนํ้า ควรทำนาดําหรือนาหว่านนํ้าตมแผนใหม่ โดยนาดําให้ เริ่มตกกล้ากลางเดือน กรกฎาคม ปักดําตนสิงหาคม แล้วข้าวจะออกดอกประมาณ 20 ตุลาคม และเก็บเกี่ยว ได้ประมาณ 20 พฤศจิกายนของทุกปี ส่วนนาหว่านนํ้ าตมแผนใหม่ ให้หว่านประมาณปลายเดือนกรกฎาคม ถึงตนเดือนสิงหาคม แล้วเก็บเกี่ยวในชวงปลายเดือนพฤศจิกายน","ข้าว");
+		m.addResult("ในพื้นที่ฝนตกน้อยหรือฝนลา ควรทํานาหว่านหรือนายอด โดยช่วงเวลาปลูกที่เหมาะสมอยูระหว่าง ปลายเดือนกรกฎาคมถึงต้นเดือนสิงหาคม และข้าวจะเก็บเกี่ยวได้ในช่วงปลายเดือนพฤศจิกายน","ข้าว");
+end
+rule "26"
+	when
+		m:Message(message=="การเตรียมดินเพื่อปลูกดอกมะลิ105");
+	then
+		m.addResult("นาหว่านข้าวแห้ง ในสภาพดินรวนปนทรายที่จังหวัดสุรินทร์และดินทรายปนดินรวนที่ทุ่งกุลาร้องไห้ จะเตรียมดินโดยการไถพรวนแล้วหว่านเมล็ดขาวในอัตรา 10 กิโลกรัมต่อไร่ จากนั้นคราดกลบและโปรยฟางคลุม 1000 กิโลกรัมตอไร จะทํ้าให้ผลผลิตเฉลี่ยที่ได้สูงสุดถึง 500 กิโลกรัม/ไร่ นาหว่านขาวแห้ง นาดํา จะตองไถดะทิ้งไว้ประมาณ 15 วัน จึงไถแปรอีกครั้ง เพื่อกําจัดต้นอ่อนของวัชพืชที่งอขึ้นมา ใหม่แล้วคราดเพื่อดันวัชพืชใหจมอยูใต้โคลน ในขณะเดียวกันก็เกลี่ยโคลนปรับระดับหน้าดินไปด้วย จะทําให้ระดับนํ้าในแปลงนาทวมคลุมวัชพืชได้อยางทั่วถึง","ข้าว");
+		m.addResult("นาหวานนํ้าตมแผนใหม มีวิธีการเตรียมดินที่ยุงยากกว่า 2 วิธีที่ผ่านมา โดยเริ่มจากการไถดะทิ้งไวประมาณ 15 วัน แล้วไถแปรทิ้งไว้อีก 7 วัน จากนั้นไถแปรอีกครั้งแลวคราดเก็บเศษ วัชพืชออกใหหมด หรือ เหยียบขี้คราดดันเศษ วัชพืชต่างๆ ใหลง ไปอยู่ใต้โคลน แล้วจึงลูบเทือกใหเรียบสมํ่าเสมอ แบ่งแปลงย่อย ขนาดกว้าง 3-5 เมตร ทิ้งไว้ 1 คืน แลวจึงหวานเมล็ด หลังจาก นั้น 4-5 วันให้ทยอยปลอยนํ้าเข้าท่วมหนาดิน เพื่อคลุมวัชพืชที่ งอกตามระดับความสูงของนํ้าจนถึงระดับประมาณ 10-15 เซนติเมตร ต้นขาวจะเจริญเติบโตพอที่จะคลุมวัชพืชได้","ข้าว");
+		m.addResult("นายอด เปนวิธีที่ไม่นิยมปลูกมากนัก แต่ถ้าจําเป็นจะต้องปลูกด้วยวิธีนี้ ในชวงเตรียมดินจะต้องกําจัดวัชพืชออกให้หมด และหลังจากหยอดเมล็ดขาวแล้วควรคลุมฟางทับในอัตรา 1000 กิโลกรัมต่อไร และ เมื่อมีโอกาสได้รับนํ้าฝนจะตองเก็บกักนํ้าใหทวมวัชพืช เพื่อกําจัดวัชพืชที่งอกมาใหม่","ข้าว");
+end
+rule "27"
+	when
+		m:Message(message=="ข้าวขาวดอกมะลิ105ไม่ต้านทาน" || message=="ข้าวขาวดอกมะลิ105อ่อนเเอต่อ");
+	then
+		m.addResult("ไหม้","โรค");
+		m.addResult("โรคคอรวงเนา","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("คอรวงเนาโรคใบหงิก","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("ใบจุดสีนํ้าตาล","โรค");
+end
+rule "28"
+	when
+		m:Message(message=="ดอกมะลิ105");
+	then
+		m.addResult("เพลี้ยกระโดดสีนํ้าตาล","แมลง");
+		m.addResult("เพลี้ยกระโดดสีนํ้าตาลหนอนกอ","แมลง");
+		m.addResult("แมลงสิง","แมลง");
+end
+rule "29"
+	when
+		m:Message(message=="ดอกมะลิ105");
+	then
+		m.addResult("หอยเชอรี่","ศัตรู");
+		m.addResult("หนู","ศัตรู");
+		m.addResult("นก","ศัตรู");
+		m.addResult("ไสเดือนฝอย","ศัตรู");
+end
+rule "30"
+	when
+		m:Message(message=="กข6");
+	then
+		m.addResult("โรคขอบใบเเห้ง","โรคข้าว");
+end
+rule "31"
+	when
+		m:Message(message=="กข6");
+	then
+		m.addResult("โรคไหม้","โรคข้าว");
+end
+rule "32"
+	when
+		m:Message(message=="กข6");
+	then
+		m.addResult("เพลี้ยกระโดดสีน้ำตาล","แมลง");
+		m.addResult("เเมลงบั่ว","แมลง");
+end
+rule "33"
+	when
+		m:Message(message=="เหนียวสันป่าตอง");
+	then
+		m.addResult("โรคใบสีส้ม","โรคข้าว");
+		m.addResult("โรคขอบใบเเห้ง","โรคข้าว");
+end
+rule "34"
+	when
+		m:Message(message=="เหนียวสันป่าตอง");
+	then
+		m.addResult("เพลี้ยกระโดดสีน้ำตาล","แมลง");
+		m.addResult("เเมลงบั่ว","แมลง");
+end
+rule "35"
+	when
+		m:Message(message=="ชัยนาท1");
+	then
+		m.addResult("ใบสีส้ม","โรคข้าว");
+		m.addResult("ขอบใบแห้ง","โรคข้าว");
+		m.addResult("ไหม้","โรคข้าว");
+		m.addResult("ใบจุดสีน้ำตาล","โรคข้าว");
+end
+rule "36"
+	when
+		m:Message(message=="สุพรรณบุรี1");
+	then
+		m.addResult("ใบขีดสีน้ำตาล","โรคข้าว");
+end
+rule "37"
+	when
+		m:Message(message=="ลำต้นส่วนสูงผิดปกติ");
+	then
+		m.addResult("ถอดฝักดาบ","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("มาตอซัง","โรค");
+end
+rule "38"
+	when
+		m:Message(message=="ลำต้นสีเขียวอ่อนซีด");
+	then
+		m.addResult("ถอดฝักดาบ","โรค");
+end
+rule "39"
+	when
+		m:Message(message=="รากแผลสีน้ำตาล");
+	then
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
+end
+rule "40"
+	when
+		m:Message(message=="รากเน่าดำ");
+	then
+		m.addResult("เมาตอซัง","โรค");
+end
+rule "41"
+	when
+		m:Message(message=="ใบแคบและสั้น");
+	then
+		m.addResult("ใบหงิก","โรค");
+end
+rule "42"
+	when
+		m:Message(message=="ใบสีเขียวเข้ม");
+	then
+		m.addResult("ใบหงิก","โรค");
+end
+rule "43"
+	when
+		m:Message(message=="ใบแผลสีเขียวเทา");
+	then
+		m.addResult("กากใบแห้ง","โรค");
+		m.addResult("ถอดฝักดาบ","โรค");
+end
+rule "44"
+	when
+		m:Message(message=="ใบแห้ง");
+	then
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+end
+rule "45"
+	when
+		m:Message(message=="ใบแผลสีเหลือง");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("เมาตอซัง","โรค");
+end
+rule "46"
+	when
+		m:Message(message=="ใบสีส้ม");
+	then
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "47"
+	when
+		m:Message(message=="ใบสีน้ำตาล");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+end
+rule "48"
+	when
+		m:Message(message=="ใบจุดสีน้ำตาล");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "49"
+	when
+		m:Message(message=="ใบช้ำ");
+	then
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+end
+rule "50"
+	when
+		m:Message(message=="เมล็ดข้าวไม่งอก");
+	then
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
+end
+rule "51"
+	when
+		m:Message(message=="แผลจุดสีน้ำตาล");
+	then
+		m.addResult("เมล็ดด่าง","โรค");
+end
+rule "52"
+	when
+		m:Message(message=="รวงข้าวไม่สมบูรณ์");
+	then
+		m.addResult("ใบหงิก","โรค");
+end
+rule "53"
+	when
+		m:Message(message=="พิษณุโลก2");
+	then
+		m.addResult("โรคใบหงิก","โรคข้าว");
+end
+rule "54"
+	when
+		m:Message(message=="พิษณุโลก2");
+	then
+		m.addResult("แมลงบั่ว","แมลง");
+end
+rule "55"
+	when
+		m:Message(message=="พิษณุโลก2");
+	then
+		m.addResult("หนอนห่อใบข้าว","แมลง");
+end
+rule "56"
+	when
+		m:Message(message=="ปราจีนบุรี1");
+	then
+		m.addResult("ใบสีส้ม","โรคข้าว");
+end
+rule "57"
+	when
+		m:Message(message=="dfds<br><br>ee");
+	then
+		m.addResult("eiei<br><br>hrrrrr","sdafasdf");
+end
+rule "58"
+	when
+		m:Message(message=="ปราจีนบุรี1");
+	then
+		m.addResult("เพลี้ยกระโดดสีน้ำตาล","แมลง");
+		m.addResult("เพลี้ยจักจั่นสีเขียว","แมลง");
+end
+rule "59"
+	when
+		m:Message(message=="กข6");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","ต้านทานโรค");
+end
+rule "60"
+	when
+		m:Message(message=="สันป่าตอง");
+	then
+		m.addResult("ไหม้","ต้านทานโรค");
+		m.addResult("ขอบใบแห้ง","ต้านทานโรค");
+end
+rule "61"
+	when
+		m:Message(message=="เหนียวสันป่าตอง");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","ต้านทานโรค");
+		m.addResult("ไหม้","ต้านทานโรค");
+end
+rule "62"
+	when
+		m:Message(message=="แผลลามทั้งต้น");
+	then
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
+end
+rule "63"
+	when
+		m:Message(message=="สุพรรณบุรี1");
+	then
+		m.addResult("ใบหงิก","ต้านทานโรค");
+		m.addResult("ไหม้","ต้านทานโรค");
+		m.addResult("ขอบใบเเห้ง","ต้านทานโรค");
+		m.addResult("ใบสีส้ม","ต้านทานโรค");
+end
+rule "64"
+	when
+		m:Message(message=="แผลลามถึงใบ");
+	then
+		m.addResult("กาบใบแห้ง","โรค");
+end
+rule "65"
+	when
+		m:Message(message=="จุดช้ำขยายตัว");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+end
+rule "66"
+	when
+		m:Message(message=="พิษณุโลก2");
+	then
+		m.addResult("ไหม้","ต้านทานโรค");
+		m.addResult("ขอบใบแห้ง","ต้านทานโรค");
+end
+rule "67"
+	when
+		m:Message(message=="ระยะกล้า");
+	then
+		m.addResult("กล้าเน่าในกระบะเพาะ","โรค");
+		m.addResult("ถอดฝักดาบ","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+		m.addResult("ใบหงิก","โรค");
+end
+rule "68"
+	when
+		m:Message(message=="ระยะแตกกอ");
+	then
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("เมาตอซัง","โรค");
+end
+rule "69"
+	when
+		m:Message(message=="ระยะออกรวง");
+	then
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("เมล็ดด่าง","โรค");
+end
+rule "70"
+	when
+		m:Message(message=="รากปม");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("ระยะกล้า","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ระยะตั้งท้อง","โรคข้าว");
+		m.addResult("ออกรวง","โรคข้าว");
+		m.addResult("ไส้เดือนฝอย","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("ราก","โรคข้าว");
+		m.addResult("พอง","โรคข้าว");
+		m.addResult("ใบ","โรคข้าว");
+		m.addResult("สีเหลือง","โรคข้าว");
+		m.addResult("ต้น","โรคข้าว");
+		m.addResult("แคระเกร็น","โรคข้าว");
+end
+rule "71"
+	when
+		m:Message(message=="ไหม้");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("ระยะกล้า","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ระยะตั้งท้อง","โรคข้าว");
+		m.addResult("ออกรวง","โรคข้าว");
+		m.addResult("คอรวง","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("ข้อลำต้น","โรคข้าว");
+		m.addResult("ข้อต่อใบ","โรคข้าว");
+		m.addResult("ใบรวง","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("จุด","โรคข้าว");
+		m.addResult("รูปตา","โรคข้าว");
+end
+rule "72"
+	when
+		m:Message(message=="ขอบใบแห้ง");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("ระยะกล้า","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ระยะตั้งท้อง","โรคข้าว");
+		m.addResult("ออกรวง","โรคข้าว");
+		m.addResult("เชื้อแบคทีเรีย","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("ใบ","โรคข้าว");
+		m.addResult("ช้ำ","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("สีเหลือง","โรคข้าว");
+		m.addResult("ขีด","โรคข้าว");
+end
+rule "73"
+	when
+		m:Message(message=="กาบใบแห้ง");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("นาปรัง","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ระยะตั้งท้อง","โรคข้าว");
+		m.addResult("ออกรวง","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("กาบใบ","โรคข้าว");
+		m.addResult("ใบ","โรคข้าว");
+		m.addResult("รวง","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("สีเขียวปนเทา","โรคข้าว");
+end
+rule "74"
+	when
+		m:Message(message=="ถอดฝักดาบ");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("นาปรัง","โรคข้าว");
+		m.addResult("ระยะกล้า","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ระยะตั้งท้อง","โรคข้าว");
+		m.addResult("ออกรวง","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("ต้น","โรคข้าว");
+		m.addResult("ย่างปล้อง","โรคข้าว");
+		m.addResult("รากเน่าช้ำ","โรคข้าว");
+		m.addResult("สีเขียวซีด","โรคข้าว");
+		m.addResult("ลุกลาม","โรคข้าว");
+end
+rule "75"
+	when
+		m:Message(message=="เมล็ดด่าง");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("นาปรัง","โรคข้าว");
+		m.addResult("ระยะออกรวง","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("เมล็ด","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("จุด","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("สีดำ","โรคข้าว");
+		m.addResult("ลายา","โรคข้าว");
+		m.addResult("สีน้ำตาลดำ","โรคข้าว");
+		m.addResult("เทาปนชมพู","โรคข้าว");
+end
+rule "76"
+	when
+		m:Message(message=="ใบจุดสีน้ำตาล");
+	then
+		m.addResult("นาปี","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ต้น","โรคข้าว");
+		m.addResult("คอรวง","โรคข้าว");
+		m.addResult("ข้อลำต้น","โรคข้าว");
+		m.addResult("ข้อต่อใบ","โรคข้าว");
+		m.addResult("ใบ","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("จุดรูปไข่","โรคข้าว");
+		m.addResult("จุดกลม","โรคข้าว");
+		m.addResult("สีสนิม","โรคข้าว");
+		m.addResult("รอย","โรคข้าว");
+		m.addResult("ลุกลาม","โรคข้าว");
+end
+rule "77"
+	when
+		m:Message(message=="วงสีน้ำตาล");
+	then
+		m.addResult("นาปรัง","โรคข้าว");
+		m.addResult("ระยะแตกกอ","โรคข้าว");
+		m.addResult("ไม่ทราบพาหะ","โรคข้าว");
+		m.addResult("ปลายใบ","โรคข้าว");
+		m.addResult("ใบ","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("ช้ำ","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("รูปไข่","โรคข้าว");
+end
+rule "78"
+	when
+		m:Message(message=="กล้าเน่าในกระบะเพาะตาล");
+	then
+		m.addResult("นาปรัง","โรคข้าว");
+		m.addResult("ระยะหลังจากการตกกล้าข้าว","โรคข้าว");
+		m.addResult("เชื้อรา","โรคข้าว");
+		m.addResult("เมล็ด","โรคข้าว");
+		m.addResult("ราก","โรคข้าว");
+		m.addResult("โคนต้น","โรคข้าว");
+		m.addResult("แผล","โรคข้าว");
+		m.addResult("สีน้ำตาล","โรคข้าว");
+		m.addResult("ลุกลาม","โรคข้าว");
+end
+rule "79"
+	when
+		m:Message(message=="หิวข้าว");
+	then
+		m.addResult("กินข้าว","ทำอย่างไรเมื่อ");
+end
+rule "80"
+	when
+		m:Message(message=="กรุงเทพ");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+end
+rule "81"
+	when
+		m:Message(message=="กำแพงเพชร");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+end
+rule "82"
+	when
+		m:Message(message=="ชัยนาท");
+	then
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+end
+rule "83"
+	when
+		m:Message(message=="นครนายก");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+end
+rule "84"
+	when
+		m:Message(message=="นครปฐม");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+end
+rule "85"
+	when
+		m:Message(message=="นครสวรรค์");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+end
+rule "86"
+	when
+		m:Message(message=="นนทบุรี");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+end
+rule "87"
+	when
+		m:Message(message=="ปทุมธานี");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+end
+rule "88"
+	when
+		m:Message(message=="พิจิตร");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "89"
+	when
+		m:Message(message=="พิษณุโลก");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+end
+rule "90"
+	when
+		m:Message(message=="เพชรบูรณ์");
+	then
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+end
+rule "91"
+	when
+		m:Message(message=="ลพบุรี");
+	then
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+end
+rule "92"
+	when
+		m:Message(message=="สมุทรปราการ");
+	then
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+end
+rule "93"
+	when
+		m:Message(message=="สมุทรสงคราม");
+	then
+		m.addResult("ปทุมธานี 80","ข้าว");
+end
+rule "94"
+	when
+		m:Message(message=="สระบุรี");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+end
+rule "95"
+	when
+		m:Message(message=="สิงห์บุรี");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+end
+rule "96"
+	when
+		m:Message(message=="สุโขทัย");
+	then
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+end
+rule "97"
+	when
+		m:Message(message=="สุพรรณบุรี");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+end
+rule "98"
+	when
+		m:Message(message=="อยุธยา");
+	then
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+end
+rule "99"
+	when
+		m:Message(message=="อ่างทอง");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+end
+rule "100"
+	when
+		m:Message(message=="ที่ต้องการชลประทาน" || message=="ต้องการชลประทาน" || message=="ชลประทาน");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("กข 43","ข้าว");
+end
+rule "101"
+	when
+		m:Message(message=="ไม่ต้องการชลประทาน" || message=="ที่ไม่ต้องการชลประทาน");
+	then
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "102"
+	when
+		m:Message(message=="ใบขีดสีน้ำตาล" || message=="ที่ต่อต้านโรคใบขีดสีน้ำตาล" || message=="ต่อต้านโรคใบขีดสีน้ำตาล");
+	then
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "103"
+	when
+		m:Message(message=="ที่ต่อต้านโรคกาบใบเน่า" || message=="ต่อต้านโรคกาบใบเน่า" || message=="โรคกาบใบเน่า");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "104"
+	when
+		m:Message(message=="ใบหงิก" || message=="ต่อต้านโรคใบหงิก" || message=="ที่ต่อต้านโรคใบหงิก");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "105"
+	when
+		m:Message(message=="ใบจุดสีน้ำตาล" || message=="ที่ต่อต้านโรคใบจุดสีน้ำตาล" || message=="ต่อต้านโรคใบจุดสีน้ำตาล");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "106"
+	when
+		m:Message(message=="ไหม้" || message=="ที่ต่อต้านโรคไหม้" || message=="ต่อต้านโรคไหม้");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+end
+rule "107"
+	when
+		m:Message(message=="แมลงบั่ว" || message=="ที่ต่อต้านโรคแมลงบั่ว" || message=="ต่อต้านโรคแมลงบั่ว");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "108"
+	when
+		m:Message(message=="ใบสีส้ม" || message=="ที่ต่อต้านโรคใบสีส้ม" || message=="ต่อต้านโรคใบสีส้ม");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "109"
+	when
+		m:Message(message=="กาบใบแห้ง" || message=="ต่อต้านโรคกาบใบแห้ง" || message=="ที่ต่อต้านโรคกาบใบแห้ง");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "110"
+	when
+		m:Message(message=="เมล็ดร่วงง่าย" || message=="ต่อต้านโรคเมล็ดร่วงง่าย" || message=="ที่ต่อต้านโรคเมล็ดร่วงง่าย");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+end
+rule "111"
+	when
+		m:Message(message=="ขอบใบแห้ง");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("เหลืองพานทอง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("รังสิต 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("เหลืองปะทิว 123","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "112"
+	when
+		m:Message(message=="เพลี้ยกระโดดสีน้ำตาล");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวตาแห้ง 17","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "113"
+	when
+		m:Message(message=="เพลี้ยจักจั่นเขียว");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวตาแห้ง 17","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("รังสิต 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 41","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("นางมล","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวกอเดียว","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "114"
+	when
+		m:Message(message=="หนอนกอ");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวตาแห้ง 17","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("รังสิต 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 41","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("นางมล","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวกอเดียว","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "115"
+	when
+		m:Message(message=="ใบขีดโปร่งแสง");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวตาแห้ง 17","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("เหลืองพานทอง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("รังสิต 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 41","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("เหลืองปะทิว 123","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("นางมล","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปิ่นแก้ว","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวกอเดียว","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "116"
+	when
+		m:Message(message=="เขียวเตี้ย");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 3","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("สุพรรณบุรี 60","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("พิษณุโลก 2","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 1","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปทุมธานี 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ข้าวตาแห้ง 17","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("เหลืองพานทอง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("รังสิต 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 41","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ชัยนาท 80","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("หลวงประทาน","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("นางมล","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("กข 43","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวเศรษฐี","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ห้ารวง","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ปิ่นแก้ว","ข้าวภาคกลางที่ต่อต้านโรค");
+		m.addResult("ขาวกอเดียว","ข้าวภาคกลางที่ต่อต้านโรค");
+end
+rule "117"
+	when
+		m:Message(message=="ภาคกลาง" || message=="อยู่ในภาคกลาง" || message=="ที่อยู่ในกลาง");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("กำแพงเพชร","จังหวัด");
+		m.addResult("ชัยนาท","จังหวัด");
+		m.addResult("นครนายก","จังหวัด");
+		m.addResult("นครปฐม","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+		m.addResult("ปทุมธานี","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("เพชรบูรณ์","จังหวัด");
+		m.addResult("ลพบุรี","จังหวัด");
+		m.addResult("สมุทรปราการ","จังหวัด");
+		m.addResult("สมุทรสงคราม","จังหวัด");
+		m.addResult("สระบุรี","จังหวัด");
+		m.addResult("สิงห์บุรี","จังหวัด");
+		m.addResult("สุโขทัย","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+		m.addResult("อยุธยา","จังหวัด");
+		m.addResult("อ่างทอง","จังหวัด");
+end
+rule "118"
+	when
+		m:Message(message=="ภาคกลาง" || message=="ที่ปลูกได้ในภาคกลาง" || message=="ปลูกภาคกลาง" || message=="ปลูกได้ในภาคกลาง");
+	then
+		m.addResult("สุพรรณบุรี 1","ข้าว");
+		m.addResult("สุพรรณบุรี 3","ข้าว");
+		m.addResult("สุพรรณบุรี 60","ข้าว");
+		m.addResult("พิษณุโลก 2","ข้าว");
+		m.addResult("ชัยนาท 1","ข้าว");
+		m.addResult("ปทุมธานี 1","ข้าว");
+		m.addResult("ข้าวดอกมะลิ 105","ข้าว");
+		m.addResult("สุพรรณบุรี 2","ข้าว");
+		m.addResult("ชัยนาท 80","ข้าว");
+		m.addResult("ปทุมธานี 80","ข้าว");
+		m.addResult("ขาวกอเดียว","ข้าว");
+		m.addResult("หลวงประทาน","ข้าว");
+		m.addResult("นางมล","ข้าว");
+		m.addResult("กข 43","ข้าว");
+		m.addResult("ขาวเศรษฐี","ข้าว");
+		m.addResult("ห้ารวง","ข้าว");
+		m.addResult("ปิ่นแก้ว","ข้าว");
+		m.addResult("ข้าวตาแห้ง 17","ข้าว");
+		m.addResult("เหลืองพานทอง","ข้าว");
+		m.addResult("รังสิต 80","ข้าว");
+		m.addResult("กข 41","ข้าว");
+		m.addResult("เหลืองปะทิว 123","ข้าว");
+end
+rule "119"
+	when
+		m:Message(message=="ที่สามารถปลูกสุพรรณบุรี 1" || message=="สามารถปลูกสุพรรณบุรี 1" || message=="ปลูกสุพรรณบุรี 1");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("กำแพงเพชร","จังหวัด");
+		m.addResult("นครปฐม","จังหวัด");
+		m.addResult("นครสวรรค์","จังหวัด");
+		m.addResult("นครนายก","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+		m.addResult("ปทุมธานี","จังหวัด");
+		m.addResult("พิจิตร","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("สระบุรี","จังหวัด");
+		m.addResult("สิงห์บุรี","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+		m.addResult("อ่างทอง","จังหวัด");
+end
+rule "120"
+	when
+		m:Message(message=="ที่สามารถปลูกสุพรรณบุรี 2" || message=="สามารถปลูกสุพรรณบุรี 2" || message=="ปลูกสุพรรณบุรี 2");
+	then
+		m.addResult("ชัยนาท","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+		m.addResult("อ่างทอง","จังหวัด");
+end
+rule "121"
+	when
+		m:Message(message=="ที่สามารถปลูกสุพรรณบุรี 3" || message=="สามารถปลูกสุพรรณบุรี 3" || message=="ปลูกสุพรรณบุรี 3");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("นครปฐม","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+end
+rule "122"
+	when
+		m:Message(message=="ที่สามารถปลูกสุพรรณบุรี 60" || message=="สามารถปลูกสุพรรณบุรี 60" || message=="ปลูกสุพรรณบุรี 60");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("นครนายก","จังหวัด");
+		m.addResult("นครปฐม","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+end
+rule "123"
+	when
+		m:Message(message=="ที่สามารถปลูกพิษณุโลก 2" || message=="สามารถปลูกพิษณุโลก 2" || message=="ปลูกพิษณุโลก 2");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("กำแพงเพชร","จังหวัด");
+		m.addResult("ชัยนาท","จังหวัด");
+		m.addResult("นครนายก","จังหวัด");
+		m.addResult("ปทุมธานี","จังหวัด");
+		m.addResult("พิษณุโลก","จังหวัด");
+		m.addResult("สระบุรี","จังหวัด");
+		m.addResult("สุพรรณบุรี","จังหวัด");
+		m.addResult("อ่างทอง","จังหวัด");
+end
+rule "124"
+	when
+		m:Message(message=="ชัยนาท 1");
+	then
+		m.addResult("กรุงเทพ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("กำแพงเพชร","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("ชัยนาท","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นครนายก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นนทบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("ปทุมธานี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("พิษณุโลก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุโขทัย","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อ่างทอง","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "125"
+	when
+		m:Message(message=="ชัยนาท 80");
+	then
+		m.addResult("ชัยนาท","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("พิจิตร","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("เพชรบูรณ์","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุโขทัย","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "126"
+	when
+		m:Message(message=="ปทุมธานี 1");
+	then
+		m.addResult("กรุงเทพ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นครนายก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นครปฐม","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นนทบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("ปทุมธานี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สิงห์บุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุพรรณบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อ่างทอง","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "127"
+	when
+		m:Message(message=="ปทุมธานี 80");
+	then
+		m.addResult("พิจิตร","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("พิษณุโลก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("เพชรบูรณ์","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรสงคราม","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สิงห์บุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุโขทัย","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุพรรณบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อ่างทอง","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "128"
+	when
+		m:Message(message=="ข้าวดอกมะลิ 105");
+	then
+		m.addResult("กำแพงเพชร","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นครนายก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("นครสววรค์","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("พิจิตร","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("พิษณุโลก","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "129"
+	when
+		m:Message(message=="กข 41");
+	then
+		m.addResult("สุโขทัย","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สุพรรณบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "130"
+	when
+		m:Message(message=="กข 43");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "131"
+	when
+		m:Message(message=="ขาวกอเดียว");
+	then
+		m.addResult("พิจิตร","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "132"
+	when
+		m:Message(message=="หลวงประทาน");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "133"
+	when
+		m:Message(message=="นางมล");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "134"
+	when
+		m:Message(message=="ขาวเศรษฐี");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "135"
+	when
+		m:Message(message=="ห้ารวง");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "136"
+	when
+		m:Message(message=="ปิ่นแก้ว");
+	then
+		m.addResult("ลพบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("สมุทรปราการ","จังหวัดภาคกลางที่สามารถปลูก");
+		m.addResult("อยุธยา","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "137"
+	when
+		m:Message(message=="ข้าวตาแห้ง 17");
+	then
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "138"
+	when
+		m:Message(message=="เหลืองพานทอง");
+	then
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "139"
+	when
+		m:Message(message=="รังสิต 80");
+	then
+		m.addResult("สระบุรี","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "140"
+	when
+		m:Message(message=="เหลืองปะทิว 123");
+	then
+		m.addResult("อ่างทอง","จังหวัดภาคกลางที่สามารถปลูก");
+end
+rule "141"
+	when
+		m:Message(message=="นาน้ำฝน" || message=="เกิดในนาน้ำฝน" || message=="ที่เกิดในนาน้ำฝน" || message=="ในนาน้ำฝน");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "142"
+	when
+		m:Message(message=="ที่เกิดในนาชลประทาน" || message=="เกิดในนาชลประทาน" || message=="ในนาชลประทาน" || message=="นาชลประทาน");
+	then
+		m.addResult("ใบจุดสีน้ำตาลเมล็ดด่าง","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "143"
+	when
+		m:Message(message=="ต้นกล้า" || message=="เกิดที่ต้นกล้า" || message=="ที่ต้นกล้า");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+end
+rule "144"
+	when
+		m:Message(message=="ใบ" || message=="ที่ใบ" || message=="เกิดที่ใบ");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "145"
+	when
+		m:Message(message=="ลำต้น");
+	then
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "146"
+	when
+		m:Message(message=="เมล็ด");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรคภาคกลาง");
+		m.addResult("เมล็ดด่าง","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+end
+rule "147"
+	when
+		m:Message(message=="ดอกข้าว");
+	then
+		m.addResult("เมล็ดด่าง","โรคภาคกลาง");
+end
+rule "148"
+	when
+		m:Message(message=="กล้า" || message=="ระยะกล้า" || message=="เมื่อระยะกล้า");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "149"
+	when
+		m:Message(message=="แตกกอ" || message=="ระยะแตกกอ" || message=="เมื่อระยะแตกกอ");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบหงิก","โรค");
+		m.addResult("ใบขีดโปร่งแสง","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "150"
+	when
+		m:Message(message=="ออกรวง");
+	then
+		m.addResult("เมล็ดด่าง","โรคภาคกลาง");
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ใบขีดโปร่งแสง","โรคภาคกลาง");
+end
+rule "151"
+	when
+		m:Message(message=="ตั้งท้อง");
+	then
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "152"
+	when
+		m:Message(message=="เก็บเกี่ยว");
+	then
+		m.addResult("เมล็ดด่าง","โรคภาคกลาง");
+		m.addResult("กาบใบแห้ง","โรคภาคกลาง");
+end
+rule "153"
+	when
+		m:Message(message=="สุพรรณบุรี 1" || message=="ที่เกิดในสุพรรณบุรี 1" || message=="เกิดในสุพรรณบุรี 1");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("เมล็ดด่าง","โรค");
+end
+rule "154"
+	when
+		m:Message(message=="สุพรรณบุรี3");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("ใบสีส้ม","โรค");
+end
+rule "155"
+	when
+		m:Message(message=="สุพรรณบุรี60");
+	then
+		m.addResult("ใบจุดสีน้ำตาล","โรค");
+		m.addResult("เมล็ดด่าง","โรค");
+		m.addResult("กาบใบแห้ง","โรค");
+end
+rule "156"
+	when
+		m:Message(message=="พิษณุโลก2");
+	then
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบหงิก","โรค");
+end
+rule "157"
+	when
+		m:Message(message=="ขาวดอกมะลิ105");
+	then
+		m.addResult("ขอบใบแห้ง","โรค");
+		m.addResult("ไหม้","โรค");
+		m.addResult("ใบหงิก","โรค");
+end
+rule "158"
+	when
+		m:Message(message=="ชัยนาท1");
+	then
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ใบขีดโปร่งแสง","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "159"
+	when
+		m:Message(message=="เหลืองประทิว123");
+	then
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("เขียวเตี้ย","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "160"
+	when
+		m:Message(message=="นางมล");
+	then
+		m.addResult("เมล็ดร่วงง่าย","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "161"
+	when
+		m:Message(message=="ปทุมธานี 1");
+	then
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+end
+rule "162"
+	when
+		m:Message(message=="ปทุมธานี 80");
+	then
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+end
+rule "163"
+	when
+		m:Message(message=="ข้าวตาแห้ง 17");
+	then
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+		m.addResult("ใบหงิก","โรคภาคกลาง");
+end
+rule "164"
+	when
+		m:Message(message=="ขาวกอเดียว");
+	then
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+end
+rule "165"
+	when
+		m:Message(message=="กข 41");
+	then
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+end
+rule "166"
+	when
+		m:Message(message=="กข 43");
+	then
+		m.addResult("ไหม้","โรคภาคกลาง");
+end
+rule "167"
+	when
+		m:Message(message=="ปิ่นแก้ว");
+	then
+		m.addResult("ขอบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ไหม้","โรคภาคกลาง");
+		m.addResult("ใบสีส้ม","โรคภาคกลาง");
+		m.addResult("กาบใบแห้ง","โรคภาคกลาง");
+		m.addResult("ใบหงิก","โรคภาคกลาง");
 end

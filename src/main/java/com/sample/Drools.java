@@ -14,19 +14,23 @@ public class Drools implements ExpertSystem {
 	private KieSession kieSession;
 	private Message message;
 	private String filename;
+	private HashSet<String> ruleCheck = new HashSet<String>();
+	private ConfigLoader configLoader;
 
 	public Drools() {
 		filename = "xrules.drl";
 		RuleEngine engine = new RuleEngine(filename);
 		kieSession = engine.getKieSession();
+		configLoader = new ConfigLoader();
+		configLoader.loadConfig();
 	}
 
 	public void reInitiate() {
-		String username = "root";
-		String password = "";
-		String databaseName = "kekm";
-		String host = "localhost";
-		String port = "3306";
+		String username = configLoader.getConfig("dbuser");
+		String password = configLoader.getConfig("dbpassword");
+		String databaseName = configLoader.getConfig("dbname");
+		String host = configLoader.getConfig("dbhost");
+		String port = configLoader.getConfig("dbport");
 		
 		String connectionString = "jdbc:mysql://" + host + ":" + port + "/"
 				+ databaseName + "?useUnicode=true&characterEncoding=UTF-8";
@@ -45,26 +49,36 @@ public class Drools implements ExpertSystem {
 		String[] arr = question.split(" ");
 		String type = arr[0];
 		HashSet<Message> resultSet = new HashSet<Message>();
+		HashSet<String> forTest = new HashSet();
 		for (int i = 1; i < arr.length; i++) {
-			HashSet<Message> tempSet = new HashSet<Message>();
 //			System.out.println(i);
 			message = new Message(arr[i], "input");
-			tempSet.addAll(getResult(message, kieSession));
-
-			if (i == 1) {
-				resultSet = tempSet;
-//				System.out.println("first");
-			} else {
-				resultSet.retainAll(tempSet);
-//				System.out.println(">1");
+			
+			HashSet<Message> temp = getResult(message, kieSession);
+			
+			resultSet.addAll(temp);
+			if(i==1) {
+				Iterator<Message> iter = temp.iterator();
+				while(iter.hasNext()) {
+					Message tt = iter.next();
+					if(tt.getType().equals(type))
+						forTest.add(tt.getMessage());
+				}
 			}
+			HashSet<String> test2 = new HashSet();
+			Iterator<Message> iter2 = temp.iterator();
+			while(iter2.hasNext()) {
+				test2.add(iter2.next().getMessage());
+			}
+			forTest.retainAll(test2);
 		}
 		Iterator<Message> iter = resultSet.iterator();
 		HashSet<String> set = new HashSet<String>();
 		while (iter.hasNext()) {
 			Message t = iter.next();
-			if (t.getType().equals(type)) {
-				set.add(t.getMessage());
+			if (forTest.contains(t.getMessage())) {
+				if(t.getType().equals(type))
+					set.add(t.getMessage());
 			}
 		}
 		Iterator<String> tIter = set.iterator();
@@ -78,6 +92,7 @@ public class Drools implements ExpertSystem {
 
 	private HashSet<Message> getResult(Message mss, KieSession ks) {
 		HashSet<Message> set = new HashSet<Message>();
+		ruleCheck.add(mss.getMessage());
 		ks.insert(mss);
 		ks.fireAllRules();
 		if (mss.getSet().isEmpty()) {
@@ -85,7 +100,12 @@ public class Drools implements ExpertSystem {
 		} else {
 			Iterator<Message> iter = mss.getSet().iterator();
 			while (iter.hasNext()) {
-				set.addAll(getResult(iter.next(), ks));
+				Message t = iter.next();
+				if(!ruleCheck.contains(t.getMessage())) {
+					ruleCheck.add(t.getMessage());
+					set.addAll(getResult(t, ks));		
+				}
+				set.add(t);
 			}
 		}
 		return set;
