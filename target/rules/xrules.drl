@@ -1,0 +1,29 @@
+import com.sample.Drools.Message;
+rule "1"
+	when
+		m:Message(message=="กรุงเทพ" || message=="กทม" || message=="กรุงเทพมหานคร");
+	then
+		m.addResult("กข6","ข้าว");
+		m.addResult("กข4","ข้าว");
+end
+rule "2"
+	when
+		m:Message(message=="ใบมีสีดำ");
+	then
+		m.addResult("ใบไหม้","โรค");
+end
+rule "3"
+	when
+		m:Message(message=="ภาคกลาง");
+	then
+		m.addResult("กรุงเทพ","จังหวัด");
+		m.addResult("นนทบุรี","จังหวัด");
+end
+rule "4"
+	when
+		m:Message(message=="ภาคใต้");
+	then
+		m.addResult("สงขลา","จังหวัด");
+		m.addResult("ยะลา","จังหวัด");
+		m.addResult("บลาๆ","จังหวัด");
+end

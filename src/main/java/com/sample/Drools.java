@@ -31,14 +31,14 @@ public class Drools implements ExpertSystem {
 		String databaseName = configLoader.getConfig("dbname");
 		String host = configLoader.getConfig("dbhost");
 		String port = configLoader.getConfig("dbport");
-		
+
 		String connectionString = "jdbc:mysql://" + host + ":" + port + "/"
 				+ databaseName + "?useUnicode=true&characterEncoding=UTF-8";
 		DatabaseConnector db = new DatabaseConnector(connectionString,
 				username, password);
 		RuleDownloader rd = new RuleDownloader(db, filename);
 		rd.download();
-		
+
 		RuleEngine engine = new RuleEngine(filename);
 		kieSession = engine.getKieSession();
 		System.out.println("RELOAD");
@@ -53,9 +53,9 @@ public class Drools implements ExpertSystem {
 		for (int i = 1; i < arr.length; i++) {
 //			System.out.println(i);
 			message = new Message(arr[i], "input");
-			
+
 			HashSet<Message> temp = getResult(message, kieSession);
-			
+
 			resultSet.addAll(temp);
 			if(i==1) {
 				Iterator<Message> iter = temp.iterator();
