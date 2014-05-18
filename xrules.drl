@@ -1,0 +1,31 @@
+import com.sample.Drools.Message;
+
+rule "220"
+	when
+		m:Message(message=="สูง");
+	then
+		System.out.println("เข้าสูง");
+		m.addResult("สารฑิศ","ใคร");
+		m.addResult("ศรัณย์","ใคร");
+		m.addResult("a","ใคร");
+		m.addResult("b","ใคร");
+end
+rule "221"
+	when
+		m:Message(message=="ขาว");
+	then
+		System.out.println("เข้าขาว");
+		m.addResult("ศรัณย์","ใคร");
+		m.addResult("วีระภัทร","ใคร");
+		m.addResult("ธัญธร","ใคร");
+		m.addResult("a","ใคร");
+		m.addResult("b","ใคร");
+end
+rule "222"
+	when
+		m:Message(message=="หล่อ");
+	then
+		System.out.println("เข้าหล่อ");
+		m.addResult("สูง","ทำไม");
+		m.addResult("ขาว","ทำไม");
+end

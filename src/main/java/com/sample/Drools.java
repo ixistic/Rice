@@ -95,18 +95,64 @@ public class Drools implements ExpertSystem {
 		ruleCheck.add(mss.getMessage());
 		ks.insert(mss);
 		ks.fireAllRules();
+		HashSet<String> forTest = new HashSet();
+		boolean testFill = false;
+		boolean skip = false;
 		if (mss.getSet().isEmpty()) {
 			set.add(mss);
+			skip = true;
 		} else {
 			Iterator<Message> iter = mss.getSet().iterator();
 			while (iter.hasNext()) {
 				Message t = iter.next();
+				forTest.add(t.getMessage());
+				set.add(t);
 				if(!ruleCheck.contains(t.getMessage())) {
 					ruleCheck.add(t.getMessage());
-					set.addAll(getResult(t, ks));		
+					HashSet<Message> temp = getResult(t, ks);
+					set.addAll(temp);
+					if(!testFill) {
+						Iterator<Message> iterX = temp.iterator();
+						while(iterX.hasNext()) {
+							Message tt = iterX.next();
+							forTest.add(tt.getMessage());
+						}
+						testFill = true;
+					}
+					else {
+						HashSet<String> test2 = new HashSet();
+						Iterator<Message> iter2 = temp.iterator();
+						while(iter2.hasNext()) {
+							test2.add(iter2.next().getMessage());
+						}
+						
+						System.out.println("[before]");
+						for(String a : forTest) {
+							System.out.print(a + "|");
+						}
+						System.out.println("[endOfBefore]");
+						
+						forTest.retainAll(test2);
+						
+						System.out.println("[after]");
+						for(String a : forTest) {
+							System.out.print(a + "|");
+						}
+						System.out.println("[enfOfAfter]");
+					}
 				}
-				set.add(t);
 			}
+		}
+		if(!skip) {
+			Iterator<Message> iter = set.iterator();
+			HashSet<Message> lastSet = new HashSet<Message>();
+			while (iter.hasNext()) {
+				Message t = iter.next();
+				if (forTest.contains(t.getMessage())) {
+					lastSet.add(t);
+				}
+			}
+			set = (HashSet) lastSet.clone();
 		}
 		return set;
 	}
